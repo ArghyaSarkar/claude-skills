@@ -1,4 +1,4 @@
-x---
+---
 name: proposal-review
 description: Evaluate whether a proposal's recommended solution actually solves the stated business problem. Use when asked to review, critique, or pressure-test a proposal, RFC, strategy doc, or architecture recommendation. Triggers include "review this proposal," "does this make sense," "should we go ahead with this," "evaluate this recommendation," or when a user shares a proposal and wants to know if the solution holds up. Do NOT use when the user only wants to check document structure, flow, or writing quality — use the document-quality-review skill for that.
 ---
