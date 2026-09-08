@@ -1,0 +1,6 @@
+experiment: checkout_flow_v2
+assignment: 50/50 user-level
+primary_metric: completed_orders_28d (mean per user)
+mde: 3%
+guardrail: cancel_rate (must not worsen by >1pp)
+sealed: 2026-07-13

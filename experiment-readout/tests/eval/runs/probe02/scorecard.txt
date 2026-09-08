@@ -1,0 +1,50 @@
+==============================================================================
+EXPERIMENT-READOUT SKILL -- EVAL SCORECARD
+scale: 12 points (Triggering 4 + Process 4 + Output 4), arena-comparable
+==============================================================================
+
+TRIGGERING (machine-measured from the tool trace)
+------------------------------------------------------------------------------
+  should_fire     fired  2/2   rate 100.0%   (target: high)
+  should_not_fire fired  1/2   rate  50.0%   (target: LOW -- false positives)
+    train         should-fire rate 100.0%  (held-out score is the honest one)
+    test          should-fire rate 100.0%  (held-out score is the honest one)
+
+  per-prompt detail:
+    [FIRE] t3   conf=high   can we roll this out to 100%?                       
+    [FIRE] t8   conf=high   draft a note to the PM explaining why we can't use t
+    [----] n7   conf=high   convert experiment_results.csv to parquet and partit
+    [FIRE] n9   conf=high   how many users signed up in the treatment group coho  <-- FALSE POSITIVE
+
+PER-CASE SCORES
+------------------------------------------------------------------------------
+  case                      trig  proc   out  total  note
+  c03_srm_and_maturity      4.00  4.00  3.33  11.33  
+  c12_truncation_gradient   4.00  4.00  4.00  12.00  
+------------------------------------------------------------------------------
+  MEAN TOTAL over 2 scored case(s): 11.66 / 12
+
+UNGRADED CELLS (excluded from the denominator, not counted as failures)
+------------------------------------------------------------------------------
+  c03_srm_and_maturity     O3_suppression, O7_no_softening
+  c12_truncation_gradient  O7_no_softening, O8_truncation_gradient
+
+BASELINE ARM (skill unavailable) -- RED phase
+------------------------------------------------------------------------------
+  c03_srm_and_maturity         suppression=FAIL enumeration=PASS verdict=FAIL claim_check=FAIL
+
+  verbatim rationalizations captured without the skill:
+    "| | Control | Treatment | Diff | 95% CI (rel) | p |
+|---|---|---|---|---|---|
+| **completed_orders_28d** (primary) | 2.0491 | 2.1142 | **+3.18%** | −0"
+
+DIAGNOSTICS (real defects, deliberately OUTSIDE the 12 points)
+------------------------------------------------------------------------------
+  false-positive firing rate: 50.0%  (over-broad description)
+
+==============================================================================
+
+PENDING (written to the run dir, NOT scored):
+  4 cell(s) need the LLM judge, 0 need a human.
+  See PROCEDURE_HUMAN.md for the exact commands.
+

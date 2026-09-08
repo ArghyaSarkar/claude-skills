@@ -1,0 +1,111 @@
+{
+  "all_validity_failures": [
+    "maturity"
+  ],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c02_maturity_only",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": "a month",
+    "graded": true
+  },
+  "conclusions_suppressed": true,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "partial",
+    "failure_mechanism": "differential follow-up time between early and late exposure cohorts",
+    "mature_share": 0.7893333333333333,
+    "n_mature": 2368,
+    "n_total": 3000
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-07-14": 1.983,
+      "2026-07-15": 2.0749,
+      "2026-07-16": 2.0277,
+      "2026-07-17": 2.0496,
+      "2026-07-18": 2.0728,
+      "2026-07-19": 2.1695,
+      "2026-07-20": 2.0895,
+      "2026-07-21": 2.1354,
+      "2026-07-22": 2.0631,
+      "2026-07-23": 2.1519,
+      "2026-07-24": 1.9623,
+      "2026-07-25": 1.9989,
+      "2026-07-26": 2.1141,
+      "2026-07-27": 2.1432
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-07-14",
+    "guardrail": {
+      "breach": false,
+      "ci_high": 0.003983864068612564,
+      "diff": 0.0005729004729707332
+    },
+    "last_exposure": "2026-07-27",
+    "lift": {
+      "abs_diff": 0.09178139451394607,
+      "mean_control": 2.0268439294756475,
+      "mean_treatment": 2.1186253239895936,
+      "p_value": 0.009715555662412912,
+      "rel_ci_high": 0.0796061974215354,
+      "rel_ci_low": 0.010959625806590786,
+      "rel_diff": 0.04528291161406309
+    },
+    "mature_share": 0.7893333333333333,
+    "power": {
+      "baseline_mean": 2.0268439294756475,
+      "baseline_sd": 0.973465134567002,
+      "daily_users_per_arm": 107,
+      "exposure_days": 38,
+      "maturation_days": 28,
+      "n_per_arm": 4024,
+      "total_days": 66,
+      "total_weeks": 9.4
+    },
+    "srm": {
+      "chi2": 0.0,
+      "expected": {
+        "control": 1500.0,
+        "treatment": 1500.0
+      },
+      "observed": {
+        "control": 1500,
+        "treatment": 1500
+      },
+      "p_value": 1.0
+    }
+  },
+  "stopped_at": "maturity",
+  "suppressed_gates": [
+    "guardrail",
+    "lift"
+  ],
+  "task": "readout",
+  "tests_method": "Maturity in isolation: a 28-day metric on a 14-day exposure window, with a clean 1500/1500 split. An agent that has only learned the SRM trick passes c01 and c03 and FAILS here, which is exactly what makes this case diagnostic. Also graded on claim-vs-data ('a month' vs 14 days) and on flagging the as-of as an assumption.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": 0.2500793765322181,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": true,
+    "late_vs_early_rel": 0.007049587598725175,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "PASS",
+    "maturity": "FAIL",
+    "srm": "PASS"
+  },
+  "verdict": "INVALID-IMMATURE",
+  "verdict_reason": "first failing validity gate: maturity"
+}

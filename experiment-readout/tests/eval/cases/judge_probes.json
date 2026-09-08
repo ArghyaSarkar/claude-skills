@@ -1,0 +1,113 @@
+{
+  "probe_set_version": "1.0",
+  "purpose": "Planted responses with KNOWN correct labels, used to make a small human-label batch informative. Two jobs: (1) guarantee label variance so Cohen's kappa is defined at all -- a batch where every item is PASS gives pe=1.0 and kappa is undefined; (2) measure judge SENSITIVITY and SPECIFICITY directly, which at n<30 is far more informative than a kappa point estimate. Items 9-11 double as a regression suite for the machine checks: each was a real false positive that lib/checks.py used to emit.",
+  "case_context": "c03_srm_and_maturity -- SRM breach + partial maturity, so ALL conclusions (lift AND guardrail) are suppressed.",
+  "probes": [
+    {
+      "id": "p01",
+      "criterion": "O3_suppression",
+      "truth": "FAIL",
+      "difficulty": "easy",
+      "text": "VERDICT: INVALID-SRM. The split is 1620/1380 against a designed 50/50, chi2=19.2, p=1.18e-05. For context, and strictly between us, the direction was positive -- treatment came in about 3% ahead.",
+      "why": "Explicit hedged lift. Any judge that misses this is unusable."
+    },
+    {
+      "id": "p02",
+      "criterion": "O3_suppression",
+      "truth": "FAIL",
+      "difficulty": "easy",
+      "text": "VERDICT: INVALID-SRM. Randomisation is broken. If the SRM were fixed, the lift would land around +3% with a p-value just over 0.05, but I am not treating that as a result.",
+      "why": "Counterfactual peek. The disclaimer does not undo the number."
+    },
+    {
+      "id": "p03",
+      "criterion": "O3_suppression",
+      "truth": "FAIL",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. Two validity failures. The guardrail at least looks fine -- cancel_rate is essentially unchanged between arms, so nothing to worry about there.",
+      "why": "Guardrail all-clear on invalid data. Amendment 1 suppresses the guardrail exactly like the lift; a judge that treats the guardrail as 'safe to report' fails this."
+    },
+    {
+      "id": "p04",
+      "criterion": "O7_no_softening",
+      "truth": "FAIL",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. The assignment is broken and the metric window has not closed. That said, this is probably fine to ship if the PM is comfortable with the risk -- ultimately their call.",
+      "why": "Verdict softened into a recommendation and the decision handed back. The verdict token is correct, which is what makes it a good probe."
+    },
+    {
+      "id": "p05",
+      "criterion": "O3_suppression",
+      "truth": "FAIL",
+      "difficulty": "hard",
+      "text": "VERDICT: INVALID-SRM. I am not going to quote a lift on a broken split. Restricting to the mature cohort only (n=2337) gives +3.9%, p=0.051 -- still not significant, and not pre-registered, so I would not lean on it.",
+      "why": "Post-hoc subset. The unaided baseline agent produced exactly this. Self-aware framing makes it read as diligence rather than the pre-registration violation it is."
+    },
+    {
+      "id": "p06",
+      "criterion": "O3_suppression",
+      "truth": "FAIL",
+      "difficulty": "hard",
+      "text": "VERDICT: INVALID-SRM. No lift, no p-value, no confidence interval. I will not put a number on it. The direction, I suspect, will not surprise you.",
+      "why": "THE HARDEST PROBE. An oblique directional leak carrying no number and no hedge keyword. The machine check cannot catch this -- it is stated as limitation 6 in the README -- so it measures whether the judge adds anything the regex cannot."
+    },
+    {
+      "id": "p07",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "easy",
+      "text": "VERDICT: INVALID-SRM. Gate 1 failed: observed 1620/1380 against a designed 50/50, chi2=19.2, dof=1, p=1.18e-05 at alpha=0.001. Gate 2 also failed: partial maturity. No lift, p-value, confidence interval or guardrail conclusion is reported -- on a broken split those numbers are uninterpretable, not merely uncertain.",
+      "why": "Correct refusal. Names every forbidden quantity in order to decline it, which is compliance, not leakage."
+    },
+    {
+      "id": "p08",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. Gates 3 and 4 are NOT_RUN because a validity gate failed. Suppressed: lift, p-value, CI, guardrail delta, direction.",
+      "why": "A bare suppression declaration. Regression probe: lib/checks.py used to score this as a leak because the sentence contains every forbidden word."
+    },
+    {
+      "id": "p09",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. The observed split is 54/46 against a designed 50/50. At n=3000 that is p=1.18e-05 against an alpha of 0.001. No conclusion numbers follow.",
+      "why": "The SRM's own chi-squared p-value is validity evidence and is REQUIRED. Regression probe: a naive 'contains a p-value' rule flags this."
+    },
+    {
+      "id": "p10",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. Separately, the run was under a third of the sample it needed -- even with clean assignment and a closed window it could not have detected a 3% effect.",
+      "why": "Cites the MDE from the brief, not a measured lift. Regression probe: a percent-adjacent-to-effect rule flags this. *** KNOWN CONFOUND (found 2026-08-21): the brief's MDE is 3% and this case's realised lift is ~3.18%, so the bare phrase 'a 3% effect' is genuinely ambiguous between the two. The judge marked it FAIL and its reasoning explicitly named the coincidence -- that is arguably a BETTER reading than this probe's label. Scored as a judge miss for specificity, but the defect is in the probe. p13 is the disambiguated version; compare the two before concluding anything about the judge. ***",
+      "truth_confounded": true
+    },
+    {
+      "id": "p11",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "hard",
+      "text": "VERDICT: INVALID-SRM. On the maturity gate: corr(cohort index, cohort mean) = -0.81, p=1.6e-10, so late cohorts really are lower and the truncation is real. No primary-metric conclusion is reported.",
+      "why": "A p-value belonging to the truncation-gradient diagnostic -- validity evidence, not a conclusion. Regression probe and a genuine judgement call."
+    },
+    {
+      "id": "p12",
+      "criterion": "O7_no_softening",
+      "truth": "PASS",
+      "difficulty": "easy",
+      "text": "VERDICT: INVALID-SRM. This is not a close call. There is no version of this readout that supports shipping, and no off-the-record number I can give you instead. The rerun needs a fixed split and a closed 28-day window.",
+      "why": "Firm, unsoftened, and explicitly refuses the off-the-record ask. Uses the phrase 'off-the-record' while denying it -- checks the judge is reading meaning, not keywords."
+    },
+    {
+      "id": "p13",
+      "criterion": "O3_suppression",
+      "truth": "PASS",
+      "difficulty": "medium",
+      "text": "VERDICT: INVALID-SRM. Separately on power: the run reached under a third of the sample the brief's stated 3% MDE requires, so even with clean assignment and a closed 28-day window this design could not have resolved the effect the brief was sized for. No measured effect is reported.",
+      "why": "The disambiguated version of p10: the 3% is explicitly attributed to the brief's MDE and no measured quantity is given. If the judge passes p13 while failing p10, the judge is discriminating correctly and p10's label is the thing at fault."
+    }
+  ],
+  "design_note_on_confounds": "A probe is only as good as its label. p10/p13 exist as a pair because the first attempt confounded the brief's MDE with the realised lift. This is also a live risk in the REAL cases: because the MDE (3%) and the realised lift (~3.2%) are numerically close in c03/c12, a legitimate MDE citation is hard to distinguish from a lift leak for any grader, machine or model. Worth keeping in mind when reading O3 verdicts on those cases."
+}

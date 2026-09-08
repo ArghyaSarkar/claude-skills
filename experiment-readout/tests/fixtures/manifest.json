@@ -1,0 +1,3419 @@
+{
+  "conclusion_gates": [
+    "guardrail",
+    "lift"
+  ],
+  "contract_version": "v1.1 (frozen contract + AMENDMENT 1)",
+  "control_guardrail_mean": 0.05,
+  "control_primary_mean": 2.0,
+  "fixtures": {
+    "claim_vs_data_span": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "claim_vs_data_span_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.01759999700000016,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.01759999700000016
+      },
+      "diff_primary": 0.14179890000000572,
+      "diff_primary_by_arm": {
+        "treatment": 0.14179890000000572
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.049347906976743,
+          2.0946081395348832,
+          2.12129558139535,
+          2.0454293023255827,
+          2.0413841121495326,
+          2.0782717289719628,
+          2.0583165887850474,
+          2.0206749999999998,
+          2.0852196261682225,
+          2.0817007009345803,
+          2.0647191588785074,
+          2.0506474299065403,
+          2.0923098130841127,
+          2.108551869158879
+        ],
+        "early_half_mean": 2.0698076228770144,
+        "late_half_mean": 2.071974799732977,
+        "late_vs_early_delta": 0.0021671768559627935,
+        "late_vs_early_rel": 0.0010470426487996197,
+        "n_cohorts": 14,
+        "truncation_corr": 0.13878914939299164
+      },
+      "intended_cancel_delta": 0.0176,
+      "intended_rel_lift": 0.0709,
+      "invalid": true,
+      "mature_count": 0,
+      "mature_share": 0.0,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999997999999865,
+        "treatment": 0.06759999500000002
+      },
+      "mean_primary": {
+        "control": 2.0000007999999956,
+        "treatment": 2.1417997000000013
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "claim_vs_data_span",
+      "note": "Real-data trap #1 in isolation. The exposure span is 14 calendar days (2026-07-14 .. 2026-07-27) while the ask claims the experiment 'finished 4 weeks'. The split is clean, so maturity is the only failure, and the gate's reported exposure_span_days is what exposes the claim-vs-data mismatch. Carries a +7.09% lift and a +1.76pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 1.5112836053620836e-10
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.07089942164023436,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.07089942164023436
+      },
+      "results": "claim_vs_data_span_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 6.404231798560089
+      }
+    },
+    "dropped_at_2pct": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "dropped_at_2pct_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 500,
+        "treatment": 500
+      },
+      "diff_guardrail": 5.759795918366256e-05,
+      "diff_guardrail_by_arm": {
+        "treatment": 5.759795918366256e-05
+      },
+      "diff_primary": 0.16000019999999826,
+      "diff_primary_by_arm": {
+        "treatment": 0.16000019999999826
+      },
+      "dropped_share": 0.02,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "WARN",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 0,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0799990999999984
+        ],
+        "early_half_mean": null,
+        "late_half_mean": null,
+        "late_vs_early_delta": null,
+        "late_vs_early_rel": null,
+        "n_cohorts": 1,
+        "truncation_corr": null
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 1000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.0500608,
+        "treatment": 0.050118397959183665
+      },
+      "mean_primary": {
+        "control": 1.9999990000000005,
+        "treatment": 2.159999199999999
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-27",
+      "n_treatment_arms": 1,
+      "name": "dropped_at_2pct",
+      "note": "AMENDMENT 3A BOUNDARY, inclusive side. Exactly 20 of 1000 rows (2.000%) have an unparseable 'n/a' in the SECONDARY column cancel_rate. 2% does not EXCEED 2%, so gate 0 must WARN and the readout must proceed: dropped rows are surfaced (rows_total 1000, rows_usable 980, the column named) but do not block. Guardrail is flat and the lift is +8.00%, so the verdict is SHIP.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 0.002638998295711882
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.08000014000006911,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.08000014000006911
+      },
+      "results": "dropped_at_2pct_results.csv",
+      "rows_dropped": 20,
+      "rows_total": 1000,
+      "rows_usable": 980,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 3.0069308003383055
+      }
+    },
+    "dropped_over_2pct": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "dropped_over_2pct_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 500,
+        "treatment": 500
+      },
+      "diff_guardrail": 0.024732624890447065,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.024732624890447065
+      },
+      "diff_primary": 0.22440080000000195,
+      "diff_primary_by_arm": {
+        "treatment": 0.22440080000000195
+      },
+      "dropped_share": 0.021,
+      "expect_all_validity_failures": [
+        "design_integrity"
+      ],
+      "expect_first_validity_failure": "design_integrity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "design_integrity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "FAIL",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-DESIGN",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 0,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1122003999999963
+        ],
+        "early_half_mean": null,
+        "late_half_mean": null,
+        "late_vs_early_delta": null,
+        "late_vs_early_rel": null,
+        "n_cohorts": 1,
+        "truncation_corr": null
+      },
+      "intended_cancel_delta": 0.0246,
+      "intended_rel_lift": 0.1122,
+      "invalid": true,
+      "mature_count": 1000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.0496815714285714,
+        "treatment": 0.07441419631901847
+      },
+      "mean_primary": {
+        "control": 2.0000000000000004,
+        "treatment": 2.2244008000000024
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-27",
+      "n_treatment_arms": 1,
+      "name": "dropped_over_2pct",
+      "note": "AMENDMENT 3A BOUNDARY, exclusive side. 21 of 1000 rows (2.100%) unparseable in cancel_rate -- ONE row more than dropped_at_2pct. That EXCEEDS 2%, so this is a data-quality problem rather than a rounding nuisance: gate 0 must FAIL -> INVALID-DESIGN. srm and maturity still have their inputs so they must still PASS. Carries a +11.22% lift and a +2.46pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 3.0441226062980488e-05
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.11220040000000095,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.11220040000000095
+      },
+      "results": "dropped_over_2pct_results.csv",
+      "rows_dropped": 21,
+      "rows_total": 1000,
+      "rows_usable": 979,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 4.170140235490918
+      }
+    },
+    "flat_but_impossible": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-21",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-21",
+      "brief": "flat_but_impossible_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.02049999633333323,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.02049999633333323
+      },
+      "diff_primary": 0.15700019999999926,
+      "diff_primary_by_arm": {
+        "treatment": 0.15700019999999926
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": "flat",
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": "integrity",
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0752402325581394,
+          2.0600186046511615,
+          2.0906160465116277,
+          2.0858167441860487,
+          2.1069196261682253,
+          2.079458177570095,
+          2.087929906542055,
+          2.0636941588785045,
+          2.075567757009344,
+          2.073392056074765,
+          2.0627598130841127,
+          2.0781289719626153,
+          2.0734532710280367,
+          2.0860224299065426
+        ],
+        "early_half_mean": 2.0837141911696215,
+        "late_half_mean": 2.073288351134846,
+        "late_vs_early_delta": -0.010425840034775646,
+        "late_vs_early_rel": -0.005003488520142706,
+        "n_cohorts": 14,
+        "truncation_corr": -0.1392013457207028
+      },
+      "intended_cancel_delta": 0.0205,
+      "intended_rel_lift": 0.0785,
+      "invalid": true,
+      "mature_count": 4716,
+      "mature_share": 0.786,
+      "maturity_cutoff_date": "2026-07-24",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000700000007,
+        "treatment": 0.0705000033333333
+      },
+      "mean_primary": {
+        "control": 2.0000004000000007,
+        "treatment": 2.1570006
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "flat_but_impossible",
+      "note": "TRUNCATION GRADIENT, absent -- the DATA INTEGRITY reading. Values are drawn i.i.d. of exposure date, so cohort means are FLAT (correlation ~0), yet at asof 2026-08-21 the cutoff is 2026-07-24 and the last three cohorts cannot possibly have a complete 28-day window (~79% mature). A truncated metric MUST show the follow-up-time dependence and this one does not, so AMENDMENT 2 requires the stronger finding: a data-integrity concern, not ordinary truncation. This is the real arena dataset's shape (measured corr = -0.031, late-vs-early -0.44%). Carries a +7.85% lift and a +2.05pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 2.678444215230881e-190
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.07850008429998274,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.07850008429998274
+      },
+      "results": "flat_but_impossible_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.1,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 29.424383250007377
+      }
+    },
+    "guardrail_at_risk": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "guardrail_at_risk_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.009499996999999753,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.009499996999999753
+      },
+      "diff_primary": 0.15999906666666552,
+      "diff_primary_by_arm": {
+        "treatment": 0.15999906666666552
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": "WARN",
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0848804651162784,
+          2.0187148837209308,
+          2.088305581395349,
+          2.093345581395349,
+          2.034583177570094,
+          2.08322242990654,
+          2.0313869158878486,
+          2.073917289719628,
+          2.131381308411214,
+          2.1244894859813086,
+          2.1046873831775703,
+          2.1233497663551413,
+          2.037759345794394,
+          2.090142056074766
+        ],
+        "early_half_mean": 2.062062719284627,
+        "late_half_mean": 2.0979609479305745,
+        "late_vs_early_delta": 0.035898228645947494,
+        "late_vs_early_rel": 0.0174088927122456,
+        "n_cohorts": 14,
+        "truncation_corr": 0.3281192035437084
+      },
+      "intended_cancel_delta": 0.0095,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 6000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999633333335,
+        "treatment": 0.059499993333333105
+      },
+      "mean_primary": {
+        "control": 2.0000007000000006,
+        "treatment": 2.159999766666666
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "guardrail_at_risk",
+      "note": "cancel_rate diff = +0.95pp, so <= 1pp and NOT a breach, but the 95% CI upper is +1.104pp which exceeds 1pp -> AT_RISK (status WARN). The contract says only BREACH forces NO-SHIP, so with a +8.00% significant lift the verdict must still be SHIP.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 9.604593679002595e-13
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.07999950533350587,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.07999950533350587
+      },
+      "results": "guardrail_at_risk_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.136057369344898
+      }
+    },
+    "guardrail_breach": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "guardrail_breach_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.015000002333333234,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.015000002333333234
+      },
+      "diff_primary": 0.15999993333333085,
+      "diff_primary_by_arm": {
+        "treatment": 0.15999993333333085
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": "FAIL",
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "NO-SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1795604651162797,
+          2.043009534883721,
+          2.0145074418604643,
+          2.0497174418604653,
+          2.101692523364487,
+          2.1067259345794382,
+          2.0785053738317756,
+          2.104921728971963,
+          2.118421261682241,
+          2.0686654205607478,
+          2.0571822429906548,
+          2.094410280373834,
+          2.0333843457943908,
+          2.0694464953271026
+        ],
+        "early_half_mean": 2.081959816499519,
+        "late_half_mean": 2.0780616822429905,
+        "late_vs_early_delta": -0.003898134256528518,
+        "late_vs_early_rel": -0.001872338853822167,
+        "n_cohorts": 14,
+        "truncation_corr": -0.19044504241515395
+      },
+      "intended_cancel_delta": 0.015,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 6000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999993000000076,
+        "treatment": 0.06499999533333331
+      },
+      "mean_primary": {
+        "control": 1.9999997000000016,
+        "treatment": 2.1599996333333324
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "guardrail_breach",
+      "note": "Validity is clean, so the conclusion gates run. Primary metric is up +8.00% and significant, but cancel_rate is worse by exactly +1.50pp, which exceeds the +1pp breach threshold. Guardrail BREACH forces NO-SHIP despite a great primary result.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 3.291384695081462e-13
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.07999997866666216,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.07999997866666216
+      },
+      "results": "guardrail_breach_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.281905149192919
+      }
+    },
+    "immature": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "immature_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.018700002666666576,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.018700002666666576
+      },
+      "diff_primary": 0.18340066666666477,
+      "diff_primary_by_arm": {
+        "treatment": 0.18340066666666477
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1002669767441877,
+          2.1190060465116303,
+          2.0909439534883707,
+          2.0934632558139543,
+          2.114673130841122,
+          2.086722196261683,
+          2.0601782710280365,
+          2.0245130841121504,
+          2.0787677570093472,
+          2.0937247663551415,
+          2.061971261682244,
+          2.1511752336448615,
+          2.0548109813084094,
+          2.153404205607476
+        ],
+        "early_half_mean": 2.0950362615269977,
+        "late_half_mean": 2.088338184245661,
+        "late_vs_early_delta": -0.006698077281336534,
+        "late_vs_early_rel": -0.0031971175890075252,
+        "n_cohorts": 14,
+        "truncation_corr": 0.03648891612339804
+      },
+      "intended_cancel_delta": 0.0187,
+      "intended_rel_lift": 0.0917,
+      "invalid": true,
+      "mature_count": 0,
+      "mature_share": 0.0,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999866666667,
+        "treatment": 0.06870000133333325
+      },
+      "mean_primary": {
+        "control": 1.999999199999999,
+        "treatment": 2.183399866666664
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "immature",
+      "note": "Exact 50/50 and otherwise clean, but the 14-day exposure window ends 2026-07-27 and the metric window is 28d, so under the ASSUMED asof = max(exposure_date) no user can be mature: mature_share = 0.0, cutoff = 2026-06-29. This is real-data trap #2 from SCENARIO.md. Carries a +9.17% lift and a +1.87pp guardrail breach, both of which must be suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 1.5005595262284231e-16
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.09170037001348043,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.09170037001348043
+      },
+      "results": "immature_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 8.256460423589111
+      }
+    },
+    "inconclusive": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "inconclusive_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 150,
+        "treatment": 150
+      },
+      "diff_guardrail": 1.3333333312437468e-08,
+      "diff_guardrail_by_arm": {
+        "treatment": 1.3333333312437468e-08
+      },
+      "diff_primary": 0.040004666666665134,
+      "diff_primary_by_arm": {
+        "treatment": 0.040004666666665134
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INCONCLUSIVE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          1.8845545454545454,
+          1.8365681818181814,
+          1.9339181818181819,
+          2.2145090909090914,
+          2.1447,
+          2.284718181818182,
+          1.8186636363636366,
+          2.245368181818182,
+          2.123013636363637,
+          2.031654545454545,
+          2.0427150000000003,
+          2.0949150000000003,
+          1.8354350000000004,
+          1.757555
+        ],
+        "early_half_mean": 2.0168045454545456,
+        "late_half_mean": 2.018665194805195,
+        "late_vs_early_delta": 0.001860649350649446,
+        "late_vs_early_rel": 0.0009225729656564684,
+        "n_cohorts": 14,
+        "truncation_corr": -0.10778105033065649
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.02,
+      "invalid": false,
+      "mature_count": 300,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999993333333374,
+        "treatment": 0.05000000666666669
+      },
+      "mean_primary": {
+        "control": 2.000001333333334,
+        "treatment": 2.040005999999999
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "inconclusive",
+      "note": "Underpowered: n=150/arm. diff = +0.04, se ~ 0.0964, t ~ 0.43, p ~ 0.669 (NOT significant) and rel_ci_high = +11.18%, well ABOVE the 3% MDE, so the MDE is NOT ruled out -> INCONCLUSIVE.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 0.6478639419239771
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.02000231999845256,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.02000231999845256
+      },
+      "results": "inconclusive_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 300,
+      "rows_usable": 300,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 0.45673164575678
+      }
+    },
+    "maturity_exact_boundary": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "maturity_exact_boundary_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1500,
+        "treatment": 1500
+      },
+      "diff_guardrail": 2.7333333305068486e-08,
+      "diff_guardrail_by_arm": {
+        "treatment": 2.7333333305068486e-08
+      },
+      "diff_primary": 0.16000066666666246,
+      "diff_primary_by_arm": {
+        "treatment": 0.16000066666666246
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 0,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0800006666666695
+        ],
+        "early_half_mean": null,
+        "late_half_mean": null,
+        "late_vs_early_delta": null,
+        "late_vs_early_rel": null,
+        "n_cohorts": 1,
+        "truncation_corr": null
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 3000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999986000000024,
+        "treatment": 0.05000001333333333
+      },
+      "mean_primary": {
+        "control": 2.000000333333335,
+        "treatment": 2.1600009999999976
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-27",
+      "n_treatment_arms": 1,
+      "name": "maturity_exact_boundary",
+      "note": "OFF-BY-ONE PROBE, pass side. Every user exposed on 2026-07-27 and asof = 2026-08-24 = exposure + exactly 28 days. The contract rule is 'mature iff exposure + W <= asof', so mature_share must be exactly 1.0 and maturity must PASS. An implementation using '<' instead of '<=' fails here. exposure_span_days = 0.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 3.734919388846947e-07
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.08000031999994449,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.08000031999994449
+      },
+      "results": "maturity_exact_boundary_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 3000,
+      "rows_usable": 3000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 5.081994647895422
+      }
+    },
+    "maturity_off_by_one": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "maturity_off_by_one_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1500,
+        "treatment": 1500
+      },
+      "diff_guardrail": 0.021800014000000062,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.021800014000000062
+      },
+      "diff_primary": 0.21020106666666338,
+      "diff_primary_by_arm": {
+        "treatment": 0.21020106666666338
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 1,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-27",
+          "2026-07-28"
+        ],
+        "cohort_means": [
+          2.1053929309769877,
+          1.226
+        ],
+        "early_half_mean": 2.1053929309769877,
+        "late_half_mean": 1.226,
+        "late_vs_early_delta": -0.8793929309769877,
+        "late_vs_early_rel": -0.41768589513070786,
+        "n_cohorts": 2,
+        "truncation_corr": -0.9999999999999999
+      },
+      "intended_cancel_delta": 0.0218,
+      "intended_rel_lift": 0.1051,
+      "invalid": true,
+      "mature_count": 2999,
+      "mature_share": 0.9996666666666667,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-28",
+      "mean_guardrail": {
+        "control": 0.04999999533333327,
+        "treatment": 0.07180000933333333
+      },
+      "mean_primary": {
+        "control": 1.99999926666667,
+        "treatment": 2.2102003333333333
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-27",
+      "n_treatment_arms": 1,
+      "name": "maturity_off_by_one",
+      "note": "OFF-BY-ONE PROBE, fail side. Identical to maturity_exact_boundary except that EXACTLY ONE treatment user is exposed on 2026-07-28, one day too late for the 28-day window at asof = 2026-08-24. mature_share = 2999/3000 = 0.999667 < 1.0, so maturity must FAIL. An implementation that rounds, or that uses a tolerance, or that tests 'most users mature', passes when it must not. Carries a +10.51% lift and a +2.18pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 3.801477428546663e-11
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.10510057187020787,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.10510057187020787
+      },
+      "results": "maturity_off_by_one_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 3000,
+      "rows_usable": 3000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 6.611615733495676
+      }
+    },
+    "mde_ruled_out": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "mde_ruled_out_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 6000,
+        "treatment": 6000
+      },
+      "diff_guardrail": -9.333333210459482e-09,
+      "diff_guardrail_by_arm": {
+        "treatment": -9.333333210459482e-09
+      },
+      "diff_primary": 0.003999500000015921,
+      "diff_primary_by_arm": {
+        "treatment": 0.003999500000015921
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "NO-SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.017125641025642,
+          2.0162872960372953,
+          2.0180987179487206,
+          2.0151273892773895,
+          1.9949625874125876,
+          1.982538694638695,
+          2.012877156177158,
+          1.993010955710958,
+          1.972698831775699,
+          1.9833399532710285,
+          1.9866518691588784,
+          2.0128304906542067,
+          1.9908890186915913,
+          2.0314746495327105
+        ],
+        "early_half_mean": 2.008145354645355,
+        "late_half_mean": 1.9958422526850106,
+        "late_vs_early_delta": -0.012303101960344565,
+        "late_vs_early_rel": -0.00612659931806447,
+        "n_cohorts": 14,
+        "truncation_corr": -0.23306913584098712
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.002,
+      "invalid": false,
+      "mature_count": 12000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000833333329,
+        "treatment": 0.04999999900000008
+      },
+      "mean_primary": {
+        "control": 1.9999997333333228,
+        "treatment": 2.0039992333333387
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "mde_ruled_out",
+      "note": "n=6000/arm. diff = +0.004, se ~ 0.0152, t ~ 0.26, p ~ 0.795 (NOT significant) and rel_ci_high = +1.705% which is BELOW the 3% MDE. The MDE is ruled out, so this is NO-SHIP, not INCONCLUSIVE. This is the fixture that separates 'no effect worth having' from 'we could not tell'.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 0.7906603997437847
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.00199975026664134,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.00199975026664134
+      },
+      "results": "mde_ruled_out_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 12000,
+      "rows_usable": 12000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 0.265453145691531
+      }
+    },
+    "missing_brief": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "missing_brief_brief.yaml",
+      "brief_exists": false,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment": 1000
+      },
+      "diff_guardrail": 0.02090000299999984,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.02090000299999984
+      },
+      "diff_primary": 0.26760230000000385,
+      "diff_primary_by_arm": {
+        "treatment": 0.26760230000000385
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "design_integrity"
+      ],
+      "expect_first_validity_failure": "design_integrity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "design_integrity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [
+        "srm",
+        "maturity"
+      ],
+      "expect_validity_status": {
+        "design_integrity": "FAIL",
+        "maturity": "NOT_ASSESSABLE",
+        "srm": "NOT_ASSESSABLE"
+      },
+      "expect_verdict": "INVALID-DESIGN",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.2243611111111115,
+          2.17925,
+          2.2923395833333347,
+          2.188325694444444,
+          2.181780555555555,
+          2.040583333333333,
+          2.073514084507042,
+          2.0819014084507037,
+          2.12897323943662,
+          2.0806316901408457,
+          2.1464661971830985,
+          2.1308253521126765,
+          2.070483098591548,
+          2.0494957746478866
+        ],
+        "early_half_mean": 2.168593480326403,
+        "late_half_mean": 2.0983966800804827,
+        "late_vs_early_delta": -0.07019680024592034,
+        "late_vs_early_rel": -0.03236973682838646,
+        "n_cohorts": 14,
+        "truncation_corr": -0.683503921756532
+      },
+      "intended_cancel_delta": 0.0209,
+      "intended_rel_lift": 0.1338,
+      "invalid": true,
+      "mature_count": 2000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999900000004,
+        "treatment": 0.07090000199999988
+      },
+      "mean_primary": {
+        "control": 1.9999995999999987,
+        "treatment": 2.2676019000000025
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "missing_brief",
+      "note": "No brief.yaml is written at all; the tests pass a path that does not exist. Gate 0 must FAIL -> INVALID-DESIGN, with exit code 0, because 'brief present' is a GATE, and a gate failure is a result rather than an input error. The CSV still carries a +13.38% lift and a +2.09pp guardrail breach, so suppression is testable.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 7.66597178000956e-12
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.13380117676023737,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.13380117676023737
+      },
+      "results": "missing_brief_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 2000,
+      "rows_usable": 2000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 6.844656262972288
+      }
+    },
+    "missing_metric_col": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "missing_metric_col_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment": 1000
+      },
+      "diff_guardrail": 0.015199998000000027,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.015199998000000027
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "design_integrity"
+      ],
+      "expect_first_validity_failure": "design_integrity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "design_integrity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "FAIL",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-DESIGN",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "intended_cancel_delta": 0.0152,
+      "intended_rel_lift": 0.0,
+      "invalid": true,
+      "mature_count": 2000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000300000001,
+        "treatment": 0.06520000100000004
+      },
+      "mean_primary": {
+        "control": null,
+        "treatment": null
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "missing_metric_col",
+      "note": "The brief names primary_metric completed_orders_28d but the CSV has no such column, so gate 0 FAILs. The brief IS present and parseable and the arm/date columns exist, so srm and maturity can and (under AMENDMENT 1) must still evaluate and PASS. Carries a +1.52pp real guardrail breach, which must be suppressed.",
+      "primary_col_present": false,
+      "primary_metric": "completed_orders_28d",
+      "results": "missing_metric_col_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 2000,
+      "rows_usable": 2000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ]
+    },
+    "monotone_but_tiny": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-21",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-21",
+      "brief": "monotone_but_tiny_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": 0.994,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.023399993333333334,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.023399993333333334
+      },
+      "diff_primary": 0.19302316666666353,
+      "diff_primary_by_arm": {
+        "treatment": 0.19302316666666353
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": "flat",
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": "integrity",
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.097834651162791,
+          2.0947251162790703,
+          2.0939239534883733,
+          2.0920667441860474,
+          2.0929572429906553,
+          2.0945441588785045,
+          2.0909490654205616,
+          2.087747663551404,
+          2.0921668224299057,
+          2.0899623831775704,
+          2.08720093457944,
+          2.087542990654206,
+          2.0851441588785047,
+          2.080389252336448
+        ],
+        "early_half_mean": 2.0938572760580003,
+        "late_half_mean": 2.087164886515354,
+        "late_vs_early_delta": -0.006692389542646282,
+        "late_vs_early_rel": -0.003196201393079526,
+        "n_cohorts": 14,
+        "truncation_corr": -0.9064460940329393
+      },
+      "intended_cancel_delta": 0.0234,
+      "intended_rel_lift": 0.0968,
+      "invalid": true,
+      "mature_count": 4716,
+      "mature_share": 0.786,
+      "maturity_cutoff_date": "2026-07-24",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.050000005999999965,
+        "treatment": 0.0733999993333333
+      },
+      "mean_primary": {
+        "control": 1.994004999999998,
+        "treatment": 2.1870281666666616
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "monotone_but_tiny",
+      "note": "AMENDMENT 3C DISCRIMINATOR: r and the MAGNITUDE disagree. The primary metric carries a PERFECTLY MONOTONE but trivially small decline (multiplier 1.000 -> 0.994 across the 14 cohorts) on a very low dispersion (sigma 0.02), so the Pearson r of cohort index against cohort mean is strongly negative while the late-half vs early-half magnitude is only about -0.3%. An implementation keying the flat/late_lower call off r calls this late_lower; the contract now requires the MAGNITUDE to decide, so it must be called FLAT -- and because the timeline still makes maturity impossible for the late cohorts, flat means the DATA INTEGRITY branch. This is the fixture that proves the strongest finding in the readout no longer rests on an unstable statistic. Carries a +9.68% lift and a +2.34pp guardrail breach, suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 0.0
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.09680174656867145,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.09680174656867145
+      },
+      "results": "monotone_but_tiny_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.02,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 176.6103775920123
+      }
+    },
+    "multiarm_guardrail_breach": {
+      "arm_names": [
+        "treatment_a",
+        "treatment_b",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "multiarm_guardrail_breach_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment_a": 1000,
+        "treatment_b": 1000
+      },
+      "diff_guardrail_by_arm": {
+        "treatment_a": -1.9999999226194554e-09,
+        "treatment_b": 0.015000018000000004
+      },
+      "diff_primary_by_arm": {
+        "treatment_a": 0.3399986000000004,
+        "treatment_b": 0.07599800000000023
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": "FAIL",
+      "expect_significant_after_holm": {
+        "treatment_a": true,
+        "treatment_b": false
+      },
+      "expect_stopped_at": null,
+      "expect_t_band": {
+        "treatment_a": [
+          4.0,
+          6.5
+        ],
+        "treatment_b": [
+          0.6,
+          1.6
+        ]
+      },
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": [
+        "treatment_a"
+      ],
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1905027777777772,
+          2.124025,
+          2.0854402777777783,
+          2.0179777777777788,
+          2.3028305555555533,
+          2.094841666666666,
+          2.137292018779342,
+          2.242442723004695,
+          2.288303286384977,
+          2.1705708920187794,
+          2.1040159624413146,
+          1.98122910798122,
+          1.9474037558685444,
+          2.2546892018779334
+        ],
+        "early_half_mean": 2.136130010619271,
+        "late_half_mean": 2.1412364185110664,
+        "late_vs_early_delta": 0.005106407891795506,
+        "late_vs_early_rel": 0.0023904948979744647,
+        "n_cohorts": 14,
+        "truncation_corr": -0.11789357258566617
+      },
+      "intended_cancel_delta": {
+        "control": 0.0,
+        "treatment_a": 0.0,
+        "treatment_b": 0.015
+      },
+      "intended_rel_lift": {
+        "control": 0.0,
+        "treatment_a": 0.17,
+        "treatment_b": 0.038
+      },
+      "invalid": false,
+      "mature_count": 3000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999992999999895,
+        "treatment_a": 0.04999999099999997,
+        "treatment_b": 0.0650000109999999
+      },
+      "mean_primary": {
+        "control": 2.0000011999999994,
+        "treatment_a": 2.3399997999999997,
+        "treatment_b": 2.0759991999999996
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 2,
+      "name": "multiarm_guardrail_breach",
+      "note": "A breach in an arm nobody would ship. treatment_b worsens cancel_rate by +1.50pp, past the +1pp threshold; treatment_a is clean on the guardrail and wins on the primary metric. The breach bars treatment_b and says nothing about treatment_a, so the verdict is SHIP naming treatment_a -- with treatment_b's breach stated in the same breath. Reading one arm's guardrail onto another arm is the same mixing-of-arms error as reading one arm's lift as the experiment's.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment_a": 2.5157248677987876e-06,
+        "treatment_b": 0.26812702110194525
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary_by_arm": {
+        "treatment_a": 0.16999919800048144,
+        "treatment_b": 0.03799897720061381
+      },
+      "results": "multiarm_guardrail_breach_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 3000,
+      "rows_usable": 3000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.66,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment_a",
+        "treatment_b"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment_a": 4.706851128467167,
+        "treatment_b": 1.1073861275406545
+      }
+    },
+    "multiarm_none_survive_holm": {
+      "arm_names": [
+        "treatment_a",
+        "treatment_b",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "multiarm_none_survive_holm_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment_a": 1000,
+        "treatment_b": 1000
+      },
+      "diff_guardrail_by_arm": {
+        "treatment_a": -2.999999963726463e-09,
+        "treatment_b": -1.000000006412538e-09
+      },
+      "diff_primary_by_arm": {
+        "treatment_a": 0.1413987000000021,
+        "treatment_b": 0.053999000000002795
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": {
+        "treatment_a": false,
+        "treatment_b": false
+      },
+      "expect_stopped_at": null,
+      "expect_t_band": {
+        "treatment_a": [
+          2.02,
+          2.2
+        ],
+        "treatment_b": [
+          0.2,
+          1.5
+        ]
+      },
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INCONCLUSIVE",
+      "expect_winning_arms": [],
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          1.965795833333333,
+          1.9897578703703696,
+          2.137758796296296,
+          1.8545574074074063,
+          2.0407569444444458,
+          2.0944555555555566,
+          2.1892708920187802,
+          2.357174178403756,
+          1.9130126760563373,
+          2.1481361502347402,
+          2.016826291079812,
+          2.237989201877935,
+          1.9841765258215955,
+          1.986538497652583
+        ],
+        "early_half_mean": 2.038907614203741,
+        "late_half_mean": 2.0919790744466797,
+        "late_vs_early_delta": 0.05307146024293896,
+        "late_vs_early_rel": 0.02602935997355872,
+        "n_cohorts": 14,
+        "truncation_corr": 0.16208035360224476
+      },
+      "intended_cancel_delta": {
+        "control": 0.0,
+        "treatment_a": 0.0,
+        "treatment_b": 0.0
+      },
+      "intended_rel_lift": {
+        "control": 0.0,
+        "treatment_a": 0.0707,
+        "treatment_b": 0.027
+      },
+      "invalid": false,
+      "mature_count": 3000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.049999998999999976,
+        "treatment_a": 0.04999999600000001,
+        "treatment_b": 0.04999999799999997
+      },
+      "mean_primary": {
+        "control": 2.0000011999999976,
+        "treatment_a": 2.1413998999999997,
+        "treatment_b": 2.0540002000000004
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 2,
+      "name": "multiarm_none_survive_holm",
+      "note": "THE MULTIPLICITY FIXTURE. treatment_a lands at p between 0.025 and 0.05: significant on its own, NOT significant once the family of two hypotheses is corrected, because the smallest of two p-values is held to alpha/2. treatment_b then inherits the stop and is retained too. Its point estimate clears the 3% MDE, so this is exactly the run that gets cherry-picked later. Nothing is ruled out either, so the verdict is INCONCLUSIVE, not NO-SHIP.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment_a": 0.041446331261712696,
+        "treatment_b": 0.42952668558712553
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary_by_arm": {
+        "treatment_a": 0.07069930758041658,
+        "treatment_b": 0.02699948380031115
+      },
+      "results": "multiarm_none_survive_holm_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 3000,
+      "rows_usable": 3000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.66,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment_a",
+        "treatment_b"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment_a": 2.039037037072845,
+        "treatment_b": 0.7900018539844647
+      }
+    },
+    "multiarm_one_winner": {
+      "arm_names": [
+        "treatment_a",
+        "treatment_b",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "multiarm_one_winner_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment_a": 1000,
+        "treatment_b": 1000
+      },
+      "diff_guardrail_by_arm": {
+        "treatment_a": -2.0000000405806517e-09,
+        "treatment_b": -3.0000000122987203e-09
+      },
+      "diff_primary_by_arm": {
+        "treatment_a": 0.3400021999999978,
+        "treatment_b": 0.07600219999999935
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": {
+        "treatment_a": true,
+        "treatment_b": false
+      },
+      "expect_stopped_at": null,
+      "expect_t_band": {
+        "treatment_a": [
+          4.0,
+          6.5
+        ],
+        "treatment_b": [
+          0.6,
+          1.6
+        ]
+      },
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": [
+        "treatment_a"
+      ],
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.077878703703704,
+          1.9362222222222216,
+          2.2098814814814807,
+          2.2456750000000003,
+          2.215765277777778,
+          2.056268055555556,
+          2.0012643192488255,
+          2.2832896713615023,
+          1.9922596244131454,
+          2.2476145539906103,
+          2.2547375586854486,
+          2.2783347417840374,
+          2.0597859154929594,
+          2.0836305164319247
+        ],
+        "early_half_mean": 2.1061364371413664,
+        "late_half_mean": 2.1713789403085184,
+        "late_vs_early_delta": 0.06524250316715197,
+        "late_vs_early_rel": 0.030977339367294184,
+        "n_cohorts": 14,
+        "truncation_corr": 0.1800358882312109
+      },
+      "intended_cancel_delta": {
+        "control": 0.0,
+        "treatment_a": 0.0,
+        "treatment_b": 0.0
+      },
+      "intended_rel_lift": {
+        "control": 0.0,
+        "treatment_a": 0.17,
+        "treatment_b": 0.038
+      },
+      "invalid": false,
+      "mature_count": 3000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.050000005999999986,
+        "treatment_a": 0.050000003999999945,
+        "treatment_b": 0.05000000299999997
+      },
+      "mean_primary": {
+        "control": 1.999998700000001,
+        "treatment_a": 2.340000899999999,
+        "treatment_b": 2.0760009000000004
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 2,
+      "name": "multiarm_one_winner",
+      "note": "THE A/B/n DEFECT FIXTURE. treatment_a is a large, unmistakable winner; treatment_b is up about 4%, which CLEARS the 3% MDE on the point estimate while being nowhere near significant. An engine that compares one treatment arm against control and drops the rest reports the +17% and never mentions treatment_b at all -- and a reader ships on a number without knowing a second arm existed. Verdict SHIP, and the verdict must NAME treatment_a.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment_a": 3.2821584333251603e-06,
+        "treatment_b": 0.24213128927510655
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary_by_arm": {
+        "treatment_a": 0.17000121050078565,
+        "treatment_b": 0.038001124700730714
+      },
+      "results": "multiarm_one_winner_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 3000,
+      "rows_usable": 3000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.66,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment_a",
+        "treatment_b"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment_a": 4.652323369399422,
+        "treatment_b": 1.169676225189997
+      }
+    },
+    "partial_maturity": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "partial_maturity_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.016399993999999918,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.016399993999999918
+      },
+      "diff_primary": 0.12619996666666844,
+      "diff_primary_by_arm": {
+        "treatment": 0.12619996666666844
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 56,
+      "gradient": {
+        "cohort_dates": [
+          "2026-06-01",
+          "2026-06-02",
+          "2026-06-03",
+          "2026-06-04",
+          "2026-06-05",
+          "2026-06-06",
+          "2026-06-07",
+          "2026-06-08",
+          "2026-06-09",
+          "2026-06-10",
+          "2026-06-11",
+          "2026-06-12",
+          "2026-06-13",
+          "2026-06-14",
+          "2026-06-15",
+          "2026-06-16",
+          "2026-06-17",
+          "2026-06-18",
+          "2026-06-19",
+          "2026-06-20",
+          "2026-06-21",
+          "2026-06-22",
+          "2026-06-23",
+          "2026-06-24",
+          "2026-06-25",
+          "2026-06-26",
+          "2026-06-27",
+          "2026-06-28",
+          "2026-06-29",
+          "2026-06-30",
+          "2026-07-01",
+          "2026-07-02",
+          "2026-07-03",
+          "2026-07-04",
+          "2026-07-05",
+          "2026-07-06",
+          "2026-07-07",
+          "2026-07-08",
+          "2026-07-09",
+          "2026-07-10",
+          "2026-07-11",
+          "2026-07-12",
+          "2026-07-13",
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0146726415094336,
+          2.0188226415094337,
+          2.137031132075472,
+          2.1895679245283013,
+          2.0201122641509444,
+          2.0075415094339624,
+          2.0232084905660375,
+          2.1285405660377354,
+          2.13793679245283,
+          2.148469811320755,
+          2.1028547169811316,
+          2.0469433962264145,
+          1.985818867924529,
+          2.0359094339622645,
+          2.1401264150943398,
+          1.9701764150943395,
+          2.285610377358491,
+          2.0295320754716974,
+          2.0510169811320753,
+          2.0926471698113205,
+          1.9994688679245283,
+          2.0288113207547176,
+          1.9629688679245287,
+          2.023961320754716,
+          1.9153509433962261,
+          2.1090518867924533,
+          2.109116981132076,
+          2.003000943396227,
+          1.9640716981132078,
+          2.070696226415094,
+          2.040849056603774,
+          2.148407547169812,
+          2.117329245283018,
+          2.027093396226416,
+          2.111016037735849,
+          2.0656141509433956,
+          2.1069548076923073,
+          1.9880201923076923,
+          2.06675673076923,
+          2.0238307692307695,
+          2.0117173076923076,
+          2.0841865384615392,
+          1.888708653846154,
+          2.2455663461538458,
+          2.004420192307692,
+          2.088980769230769,
+          2.1689211538461546,
+          2.008680769230769,
+          2.1333057692307693,
+          2.0260326923076915,
+          1.9986826923076926,
+          2.0446980769230767,
+          2.0386826923076917,
+          2.139357692307692,
+          2.175578846153847,
+          2.1419038461538475,
+          1.9484999999999997
+        ],
+        "early_half_mean": 2.061366812668463,
+        "late_half_mean": 2.064778065412142,
+        "late_vs_early_delta": 0.0034112527436787055,
+        "late_vs_early_rel": 0.001654849938746612,
+        "n_cohorts": 57,
+        "truncation_corr": -0.012039307388337434
+      },
+      "intended_cancel_delta": 0.0164,
+      "intended_rel_lift": 0.0631,
+      "invalid": true,
+      "mature_count": 3074,
+      "mature_share": 0.5123333333333333,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.050000001000000044,
+        "treatment": 0.06639999499999996
+      },
+      "mean_primary": {
+        "control": 1.9999995999999982,
+        "treatment": 2.1261995666666667
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-06-01",
+      "n_treatment_arms": 1,
+      "name": "partial_maturity",
+      "note": "PARTIAL MATURITY BOUNDARY. 57-day exposure span (2026-06-01 .. 2026-07-27); under the assumed asof = 2026-07-27 the cutoff is 2026-06-29, so roughly half the users are mature (0 < mature_share < 1). AMENDMENT 1 keeps this a FAIL -> INVALID-IMMATURE, for the differential-follow-up reason. Carries a +6.31% lift and a +1.64pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 9.549757371452932e-09
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.06309999595333347,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.06309999595333347
+      },
+      "results": "partial_maturity_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-05-30",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 5.738537581772289
+      }
+    },
+    "precedence_all_bad": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "precedence_all_bad_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 2400,
+        "treatment": 3600
+      },
+      "diff_guardrail": 0.025799994027777648,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.025799994027777648
+      },
+      "diff_primary": 0.28179984722221985,
+      "diff_primary_by_arm": {
+        "treatment": 0.28179984722221985
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "srm",
+        "maturity"
+      ],
+      "expect_first_validity_failure": "srm",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "srm",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "FAIL"
+      },
+      "expect_verdict": "INVALID-SRM",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.226523720930231,
+          2.1750909302325585,
+          2.1604121212121212,
+          2.1541750582750545,
+          2.2143969696969705,
+          2.1389382284382297,
+          2.128128504672899,
+          2.2188992990654204,
+          2.1611733644859847,
+          2.113434112149533,
+          2.215357242990653,
+          2.202458644859812,
+          2.115396495327103,
+          2.142453037383177
+        ],
+        "early_half_mean": 2.171095076208295,
+        "late_half_mean": 2.1670245994659547,
+        "late_vs_early_delta": -0.00407047674234029,
+        "late_vs_early_rel": -0.0018748496032928998,
+        "n_cohorts": 14,
+        "truncation_corr": -0.2968409379354169
+      },
+      "intended_cancel_delta": 0.0258,
+      "intended_rel_lift": 0.1409,
+      "invalid": true,
+      "mature_count": 0,
+      "mature_share": 0.0,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999625000001,
+        "treatment": 0.07579999027777766
+      },
+      "mean_primary": {
+        "control": 1.9999997083333327,
+        "treatment": 2.2817995555555526
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "precedence_all_bad",
+      "note": "PRECEDENCE + NO-HIDING. Simultaneously SRM-broken (3600/2400, chi2 = 240.0) AND immature (28d metric, assumed asof) AND guardrail-breaching (+2.58pp). Because SRM is gate 1 the verdict MUST be INVALID-SRM and stopped_at MUST be 'srm' -- but under AMENDMENT 1 the maturity gate must STILL report a real FAIL, not NOT_RUN, and all_validity_failures must be exactly ['srm', 'maturity']. Carries a +14.09% lift, suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 6.090989988150147e-34
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.1408999441590185,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.1408999441590185
+      },
+      "results": "precedence_all_bad_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 240.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 12.145097555620241
+      }
+    },
+    "real_dataset_shape": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-21",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-21",
+      "brief": "real_dataset_shape_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 5508,
+        "treatment": 6492
+      },
+      "diff_guardrail": 0.01929999892208513,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.01929999892208513
+      },
+      "diff_primary": 0.15280131705588085,
+      "diff_primary_by_arm": {
+        "treatment": 0.15280131705588085
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "srm",
+        "maturity"
+      ],
+      "expect_first_validity_failure": "srm",
+      "expect_gradient_label": "flat",
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "srm",
+      "expect_t_band": null,
+      "expect_truncation_reading": "integrity",
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "FAIL"
+      },
+      "expect_verdict": "INVALID-SRM",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0793400932400923,
+          2.0854472027972033,
+          2.087651282051282,
+          2.0639620046620046,
+          2.098490792540794,
+          2.066533449883448,
+          2.0544508751458608,
+          2.0879850641773636,
+          2.058551808634773,
+          2.122271061843641,
+          2.107969158878505,
+          2.1290424065420552,
+          2.0461636682242985,
+          2.0694903037383208
+        ],
+        "early_half_mean": 2.0765536714743833,
+        "late_half_mean": 2.088781924576994,
+        "late_vs_early_delta": 0.012228253102610775,
+        "late_vs_early_rel": 0.005888724799455117,
+        "n_cohorts": 14,
+        "truncation_corr": 0.09125016547919976
+      },
+      "intended_cancel_delta": 0.0193,
+      "intended_rel_lift": 0.0764,
+      "invalid": true,
+      "mature_count": 9432,
+      "mature_share": 0.786,
+      "maturity_cutoff_date": "2026-07-24",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999491648506,
+        "treatment": 0.06929999383857019
+      },
+      "mean_primary": {
+        "control": 1.9999992374727689,
+        "treatment": 2.1528005545286497
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "real_dataset_shape",
+      "note": "Reproduces the SHAPE of the real arena practice dataset without depending on the file: n=12000 split 6492/5508 = 54.1/45.9, so chi2 = 2*492^2/6000 = 80.688 and p = 2.66e-19 (the contract quotes chi2 ~ 80.7, p ~ 3e-19); 14-day exposure span 2026-07-14 .. 2026-07-27 against a 28-day metric window. Both defects present at once: verdict INVALID-SRM, maturity ALSO FAIL, both conclusion gates NOT_RUN. Carries a +7.64% lift and a +1.93pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 4.312839203092272e-22
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.07640068765674284,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.07640068765674284
+      },
+      "results": "real_dataset_shape_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 12000,
+      "rows_usable": 12000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 80.688,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 9.66340540202027
+      }
+    },
+    "sealed_after_exposure": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "sealed_after_exposure_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 1000,
+        "treatment": 1000
+      },
+      "diff_guardrail": 0.02430001199999987,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.02430001199999987
+      },
+      "diff_primary": 0.25120130000000085,
+      "diff_primary_by_arm": {
+        "treatment": 0.25120130000000085
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "design_integrity"
+      ],
+      "expect_first_validity_failure": "design_integrity",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "design_integrity",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "FAIL",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-DESIGN",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1882548611111106,
+          2.0718402777777785,
+          2.0252027777777775,
+          2.351550694444444,
+          2.12899513888889,
+          2.177304166666667,
+          2.0949725352112667,
+          1.9711,
+          2.186233098591549,
+          2.004037323943661,
+          2.0794056338028177,
+          2.1370894366197177,
+          2.1570992957746498,
+          2.1826556338028174
+        ],
+        "early_half_mean": 2.1483029216968474,
+        "late_half_mean": 2.1025172032193162,
+        "late_vs_early_delta": -0.04578571847753121,
+        "late_vs_early_rel": -0.021312505799399622,
+        "n_cohorts": 14,
+        "truncation_corr": -0.07211258329980526
+      },
+      "intended_cancel_delta": 0.0243,
+      "intended_rel_lift": 0.1256,
+      "invalid": true,
+      "mature_count": 2000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999200000006,
+        "treatment": 0.07430000399999993
+      },
+      "mean_primary": {
+        "control": 2.0000000999999994,
+        "treatment": 2.2512014000000002
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "sealed_after_exposure",
+      "note": "sealed = 2026-07-20 is AFTER the first exposure 2026-07-14, so the design was not sealed before the data existed -- the classic post-hoc-design tell. Gate 0 requires sealed <= first exposure, so it FAILs. Everything else is clean. Carries a +12.56% lift and a +2.43pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 7.865588260368586e-11
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.12560064371996826,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.12560064371996826
+      },
+      "results": "sealed_after_exposure_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 2000,
+      "rows_usable": 2000,
+      "sealed": "2026-07-20",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 6.503148875667365
+      }
+    },
+    "ship_clean": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "ship_clean_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 9.999999883714139e-09,
+      "diff_guardrail_by_arm": {
+        "treatment": 9.999999883714139e-09
+      },
+      "diff_primary": 0.1600007333333371,
+      "diff_primary_by_arm": {
+        "treatment": 0.1600007333333371
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0449118604651164,
+          2.1234953488372104,
+          2.101740697674418,
+          2.0394388372093033,
+          2.0624200934579435,
+          2.0363200934579417,
+          2.092993457943924,
+          2.0193088785046736,
+          2.098383411214954,
+          2.0942009345794377,
+          2.0836929906542054,
+          2.0931058411214942,
+          2.1477310747663556,
+          2.0822985981308415
+        ],
+        "early_half_mean": 2.071617198435123,
+        "late_half_mean": 2.088388818424566,
+        "late_vs_early_delta": 0.01677161998944321,
+        "late_vs_early_rel": 0.008095906908917492,
+        "n_cohorts": 14,
+        "truncation_corr": 0.3229111458127787
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 6000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999100000015,
+        "treatment": 0.05000000100000004
+      },
+      "mean_primary": {
+        "control": 1.9999991666666632,
+        "treatment": 2.1599999000000003
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "ship_clean",
+      "note": "Exact 50/50, every user mature at the supplied asof, guardrail flat, +8.00% lift with p~1.5e-12 and rel CI [+5.79%, +10.21%] entirely above the 3% MDE. Also reused by the --asof CLI test: the SAME CSV run WITHOUT --asof must flip maturity PASS -> FAIL.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 1.3402589363943584e-12
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.08000040000016868,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.08000040000016868
+      },
+      "results": "ship_clean_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.090088881823323
+      }
+    },
+    "sig_below_mde": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "sig_below_mde_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 6000,
+        "treatment": 6000
+      },
+      "diff_guardrail": -3.3333327764673015e-10,
+      "diff_guardrail_by_arm": {
+        "treatment": -3.3333327764673015e-10
+      },
+      "diff_primary": 0.048001216666668345,
+      "diff_primary_by_arm": {
+        "treatment": 0.048001216666668345
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "NO-SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0479142191142174,
+          2.0573532634032596,
+          2.0443868298368284,
+          2.031045571095571,
+          2.035917948717948,
+          1.9669920745920757,
+          2.069573776223775,
+          2.0064174825174823,
+          2.008814836448599,
+          2.002680490654207,
+          2.0005360981308407,
+          2.003967757009347,
+          2.0164169392523372,
+          2.0438286214953276
+        ],
+        "early_half_mean": 2.0361690975690965,
+        "late_half_mean": 2.011808889358306,
+        "late_vs_early_delta": -0.024360208210790546,
+        "late_vs_early_rel": -0.011963745172183026,
+        "n_cohorts": 14,
+        "truncation_corr": -0.39239989330074404
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.024,
+      "invalid": false,
+      "mature_count": 12000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000000000011,
+        "treatment": 0.04999999966666683
+      },
+      "mean_primary": {
+        "control": 1.9999996666666666,
+        "treatment": 2.048000883333335
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "sig_below_mde",
+      "note": "n=6000/arm. diff = +0.048, se ~ 0.0152, t ~ 3.11, p ~ 0.00190 (< 0.05) -- but rel_lift = +2.40% < the 3% MDE. Statistically significant yet practically below the MDE -> NO-SHIP.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 0.0018253915769406992
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.024000612333436228,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.024000612333436228
+      },
+      "results": "sig_below_mde_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 12000,
+      "rows_usable": 12000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 3.117262178542476
+      }
+    },
+    "srm_broken": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "srm_broken_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 2400,
+        "treatment": 3600
+      },
+      "diff_guardrail": 0.023099998750000038,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.023099998750000038
+      },
+      "diff_primary": 0.23459995833333092,
+      "diff_primary_by_arm": {
+        "treatment": 0.23459995833333092
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "srm"
+      ],
+      "expect_first_validity_failure": "srm",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "srm",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "FAIL"
+      },
+      "expect_verdict": "INVALID-SRM",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.1166758139534894,
+          2.1249372093023267,
+          2.15799020979021,
+          2.108720046620045,
+          2.0927412587412597,
+          2.1785319347319345,
+          2.195896028037382,
+          2.111964252336448,
+          2.1422278037383182,
+          2.179770093457944,
+          2.100056074766355,
+          2.1377390186915894,
+          2.227599299065421,
+          2.0960338785046724
+        ],
+        "early_half_mean": 2.1393560715966635,
+        "late_half_mean": 2.1421986315086783,
+        "late_vs_early_delta": 0.0028425599120147638,
+        "late_vs_early_rel": 0.0013286988312764965,
+        "n_cohorts": 14,
+        "truncation_corr": 0.19018627388568918
+      },
+      "intended_cancel_delta": 0.0231,
+      "intended_rel_lift": 0.1173,
+      "invalid": true,
+      "mature_count": 6000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000208333335,
+        "treatment": 0.07310000083333339
+      },
+      "mean_primary": {
+        "control": 1.999999875000001,
+        "treatment": 2.234599833333332
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "srm_broken",
+      "note": "Badly broken 3600/2400 split: chi2 = 2*600^2/3000 = 240.0, p = 3.93e-54, far below alpha=0.001. Design and maturity are both clean (asof supplied), so this isolates gate 1 and proves the other validity gates still report PASS rather than NOT_RUN. Carries a +11.73% real lift AND a +2.31pp real guardrail breach, both of which must be completely absent from the output.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 2.5204516924178025e-24
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.11729998649791455,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.11729998649791455
+      },
+      "results": "srm_broken_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 240.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 10.17666762890208
+      }
+    },
+    "srm_mild": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-08-24",
+      "asof_provenance": "given",
+      "asof_used": "2026-08-24",
+      "brief": "srm_mild_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 2950,
+        "treatment": 3050
+      },
+      "diff_guardrail": 3.517643856754127e-09,
+      "diff_guardrail_by_arm": {
+        "treatment": 3.517643856754127e-09
+      },
+      "diff_primary": 0.15999976715754904,
+      "diff_primary_by_arm": {
+        "treatment": 0.15999976715754904
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [],
+      "expect_first_validity_failure": null,
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": null,
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "PASS",
+        "srm": "PASS"
+      },
+      "expect_verdict": "SHIP",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0684927738927716,
+          2.039830536130536,
+          2.1129440559440553,
+          2.0665706293706294,
+          2.0421792540792527,
+          2.106929137529137,
+          1.9847783216783215,
+          2.13210372960373,
+          2.152459906759908,
+          2.1244139860139875,
+          2.0874546728971937,
+          2.1021537383177553,
+          2.068553864168617,
+          2.049657377049179
+        ],
+        "early_half_mean": 2.0602463869463863,
+        "late_half_mean": 2.1023996106871956,
+        "late_vs_early_delta": 0.04215322374080932,
+        "late_vs_early_rel": 0.02046028281272082,
+        "n_cohorts": 14,
+        "truncation_corr": 0.16843176079107733
+      },
+      "intended_cancel_delta": 0.0,
+      "intended_rel_lift": 0.08,
+      "invalid": false,
+      "mature_count": 6000,
+      "mature_share": 1.0,
+      "maturity_cutoff_date": "2026-07-27",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.05000000271186441,
+        "treatment": 0.050000006229508266
+      },
+      "mean_primary": {
+        "control": 2.000000101694914,
+        "treatment": 2.159999868852463
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "srm_mild",
+      "note": "Mild 3050/2950 imbalance. chi2 = 2*50^2/3000 = 1.66667, p = erfc(sqrt(0.833333)) = 0.19670, which must NOT trip alpha=0.001. Proves the SRM gate is not hair-triggered.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 2.4629430347558833e-13
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.0799998795109841,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.0799998795109841
+      },
+      "results": "srm_mild_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 1.6666666666666667,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.320910373411534
+      }
+    },
+    "trap_real_data": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "trap_real_data_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": null,
+      "counts": {
+        "control": 2700,
+        "treatment": 3300
+      },
+      "diff_guardrail": 0.013699999292929282,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.013699999292929282
+      },
+      "diff_primary": 0.16840119865319925,
+      "diff_primary_by_arm": {
+        "treatment": 0.16840119865319925
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "srm",
+        "maturity"
+      ],
+      "expect_first_validity_failure": "srm",
+      "expect_gradient_label": null,
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "srm",
+      "expect_t_band": null,
+      "expect_truncation_reading": null,
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "FAIL"
+      },
+      "expect_verdict": "INVALID-SRM",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          2.0921188811188807,
+          2.011988111888112,
+          2.1349146853146843,
+          2.096396736596735,
+          2.1014235431235417,
+          2.1187958041958037,
+          2.1187524475524486,
+          2.063235664335665,
+          2.111917948717949,
+          2.087397668997669,
+          2.0569693925233654,
+          2.1546668224299057,
+          2.071811241217799,
+          2.0761845433255273
+        ],
+        "early_half_mean": 2.096341458541458,
+        "late_half_mean": 2.0888833259354116,
+        "late_vs_early_delta": -0.0074581326060463304,
+        "late_vs_early_rel": -0.003557689791259183,
+        "n_cohorts": 14,
+        "truncation_corr": 0.0527307083385051
+      },
+      "intended_cancel_delta": 0.0137,
+      "intended_rel_lift": 0.0842,
+      "invalid": true,
+      "mature_count": 0,
+      "mature_share": 0.0,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.04999999222222222,
+        "treatment": 0.0636999915151515
+      },
+      "mean_primary": {
+        "control": 1.999999740740744,
+        "treatment": 2.168400939393943
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "trap_real_data",
+      "note": "Both real-data traps from SCENARIO.md at once, using the VERBATIM brief text 'completed_orders_28d (mean per user)' so the metric-name parser has to cope with the parenthetical: (1) 14-day exposure span vs a claimed '4 weeks' with a 28d metric that cannot be mature; (2) a broken 3300/2700 split (chi2 = 2*300^2/3000 = 60.0, p = 9.49e-15). Carries a +8.42% lift and a +1.37pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 2.971301893607198e-14
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d (mean per user)",
+      "rel_diff_primary": 0.0842006102414934,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.0842006102414934
+      },
+      "results": "trap_real_data_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 60.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.599563965021268
+      }
+    },
+    "truncation_gradient": {
+      "arm_names": [
+        "treatment",
+        "control"
+      ],
+      "asof": "2026-07-27",
+      "asof_provenance": "given",
+      "asof_used": "2026-07-27",
+      "brief": "truncation_gradient_brief.yaml",
+      "brief_exists": true,
+      "cohort_gradient": 0.55,
+      "counts": {
+        "control": 3000,
+        "treatment": 3000
+      },
+      "diff_guardrail": 0.022099998666666475,
+      "diff_guardrail_by_arm": {
+        "treatment": 0.022099998666666475
+      },
+      "diff_primary": 0.1364053333333335,
+      "diff_primary_by_arm": {
+        "treatment": 0.1364053333333335
+      },
+      "dropped_share": 0.0,
+      "expect_all_validity_failures": [
+        "maturity"
+      ],
+      "expect_first_validity_failure": "maturity",
+      "expect_gradient_label": "late_lower",
+      "expect_guardrail_status": null,
+      "expect_significant_after_holm": null,
+      "expect_stopped_at": "maturity",
+      "expect_t_band": null,
+      "expect_truncation_reading": "truncation",
+      "expect_validity_not_assessable": [],
+      "expect_validity_status": {
+        "design_integrity": "PASS",
+        "maturity": "FAIL",
+        "srm": "PASS"
+      },
+      "expect_verdict": "INVALID-IMMATURE",
+      "expect_winning_arms": null,
+      "exposure_span_days_exclusive": 13,
+      "gradient": {
+        "cohort_dates": [
+          "2026-07-14",
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-27"
+        ],
+        "cohort_means": [
+          1.9997432558139536,
+          2.0021434883720928,
+          1.9815141860465122,
+          1.8428167441860481,
+          1.773866588785045,
+          1.7043058411214933,
+          1.6686273364485993,
+          1.5996247663551397,
+          1.524760747663551,
+          1.464869626168225,
+          1.3703432242990654,
+          1.3051387850467293,
+          1.228948831775701,
+          1.1464217289719634
+        ],
+        "early_half_mean": 1.8532882058248208,
+        "late_half_mean": 1.377158244325768,
+        "late_vs_early_delta": -0.47612996149905285,
+        "late_vs_early_rel": -0.2569109111052414,
+        "n_cohorts": 14,
+        "truncation_corr": -0.9955130911949973
+      },
+      "intended_cancel_delta": 0.0221,
+      "intended_rel_lift": 0.0873,
+      "invalid": true,
+      "mature_count": 0,
+      "mature_share": 0.0,
+      "maturity_cutoff_date": "2026-06-29",
+      "max_exposure_date": "2026-07-27",
+      "mean_guardrail": {
+        "control": 0.0500000013333334,
+        "treatment": 0.07209999999999987
+      },
+      "mean_primary": {
+        "control": 1.5474756666666656,
+        "treatment": 1.683880999999999
+      },
+      "metric_window_days": 28,
+      "min_exposure_date": "2026-07-14",
+      "n_treatment_arms": 1,
+      "name": "truncation_gradient",
+      "note": "TRUNCATION GRADIENT, present. The primary metric is scaled by a factor declining linearly from 1.00 for the 2026-07-14 cohort to 0.55 for the 2026-07-27 cohort, identically in both arms. That is exactly what a genuinely truncated 28-day metric looks like: late cohorts had less follow-up time, so they are systematically lower. The correlation of cohort index with cohort mean is strongly negative and the late-half mean is far below the early-half mean, so AMENDMENT 2 requires this to be reported as positive evidence of truncation, establishable from the data with no as-of date at all. Verdict INVALID-IMMATURE. Carries a +8.73% lift and a +2.21pp guardrail breach, both suppressed.",
+      "p_normal_approx_primary_by_arm": {
+        "treatment": 5.652650896686549e-13
+      },
+      "primary_col_present": true,
+      "primary_metric": "completed_orders_28d",
+      "rel_diff_primary": 0.08814699724949919,
+      "rel_diff_primary_by_arm": {
+        "treatment": 0.08814699724949919
+      },
+      "results": "truncation_gradient_results.csv",
+      "rows_dropped": 0,
+      "rows_total": 6000,
+      "rows_usable": 6000,
+      "sealed": "2026-07-13",
+      "sigma_primary": 0.4,
+      "srm_chi2": 0.0,
+      "treatment_arms": [
+        "treatment"
+      ],
+      "welch_t_primary_by_arm": {
+        "treatment": 7.208608531438138
+      }
+    }
+  },
+  "primary_col": "completed_orders_28d",
+  "seed": 20260821,
+  "sigma_guardrail": 0.5,
+  "sigma_primary": 0.4,
+  "validity_gates": [
+    "design_integrity",
+    "srm",
+    "maturity"
+  ]
+}

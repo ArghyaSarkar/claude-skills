@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.swp
+
+# Porter-coupled skills — kept on disk for use, never versioned/pushed (clean-room)
+engagement-scan/
+performance-review/
+peer-feedback/
+pr-review-integrity/

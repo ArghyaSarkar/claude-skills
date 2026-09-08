@@ -1,0 +1,118 @@
+==============================================================================
+EXPERIMENT-READOUT SKILL -- EVAL SCORECARD
+scale: 12 points (Triggering 4 + Process 4 + Output 4), arena-comparable
+==============================================================================
+
+PER-CASE SCORES
+------------------------------------------------------------------------------
+  case                      trig  proc   out  total  note
+  c02_maturity_only          -    4.00  4.00   8.00  PARTIAL
+  c03_srm_and_maturity       -    4.00  4.00   8.00  PARTIAL
+  c10_slack_to_pm            -    4.00  4.00   8.00  PARTIAL
+  c12_truncation_gradient    -    4.00  4.00   8.00  PARTIAL
+------------------------------------------------------------------------------
+  MEAN TOTAL over 4 scored case(s): 8.00 / 12
+
+UNGRADED CELLS (excluded from the denominator, not counted as failures)
+------------------------------------------------------------------------------
+  c02_maturity_only        O7_no_softening, O7_no_softening
+  c03_srm_and_maturity     O3_suppression, O7_no_softening, O3_suppression, O7_no_softening
+  c10_slack_to_pm          O3_suppression, O4_format, O7_no_softening, O3_suppression, O4_format, O7_no_softening
+  c12_truncation_gradient  O7_no_softening, O8_truncation_gradient, O7_no_softening, O8_truncation_gradient
+
+BASELINE ARM (skill unavailable) -- RED phase
+------------------------------------------------------------------------------
+  c03_srm_and_maturity         suppression=FAIL enumeration=PASS verdict=FAIL claim_check=FAIL
+
+  verbatim rationalizations captured without the skill:
+    "| | Control | Treatment | Diff | 95% CI (rel) | p |
+|---|---|---|---|---|---|
+| **completed_orders_28d** (primary) | 2.0491 | 2.1142 | **+3.18%** | −0"
+
+DIAGNOSTICS (real defects, deliberately OUTSIDE the 12 points)
+------------------------------------------------------------------------------
+
+==============================================================================
+
+============================================================================================
+PER-CRITERION PASS RATES ACROSS REPEATED RUNS
+counts are shown because a rate without a denominator is not a finding
+============================================================================================
+
+c02_maturity_only   (n=5 runs)
+  criterion                pass/n  graded    rate   reading
+  ------------------------------------------------------------------------------------------
+  O1_verdict               5/5     5/5        100%  BINDING
+  O2_enumeration           5/5     5/5        100%  BINDING
+  O3_suppression           5/5     5/5        100%  BINDING
+  O4_format                5/5     5/5        100%  BINDING
+  O5_asof_calibration      5/5     5/5        100%  BINDING
+  O6_claim_vs_data         5/5     5/5        100%  BINDING
+  O7_no_softening          0/5     0/5         -    UNGRADED
+  O8_truncation_gradient   5/5     5/5        100%  BINDING
+  P1_gate_order            5/5     5/5        100%  BINDING
+  P2_scripts_invoked       5/5     5/5        100%  BINDING
+  P3_references_cited      5/5     5/5        100%  BINDING
+  P4_no_improvisation      5/5     5/5        100%  BINDING
+
+c03_srm_and_maturity   (n=5 runs)
+  criterion                pass/n  graded    rate   reading
+  ------------------------------------------------------------------------------------------
+  O1_verdict               5/5     5/5        100%  BINDING
+  O2_enumeration           5/5     5/5        100%  BINDING
+  O3_suppression           2/5     2/5        100%  LOW COVERAGE (2/5 graded)
+  O4_format                5/5     5/5        100%  BINDING
+  O5_asof_calibration      5/5     5/5        100%  BINDING
+  O6_claim_vs_data         5/5     5/5        100%  BINDING
+  O7_no_softening          0/5     0/5         -    UNGRADED
+  O8_truncation_gradient   5/5     5/5        100%  BINDING
+  P1_gate_order            5/5     5/5        100%  BINDING
+  P2_scripts_invoked       5/5     5/5        100%  BINDING
+  P3_references_cited      5/5     5/5        100%  BINDING
+  P4_no_improvisation      5/5     5/5        100%  BINDING
+
+c10_slack_to_pm   (n=5 runs)
+  criterion                pass/n  graded    rate   reading
+  ------------------------------------------------------------------------------------------
+  O1_verdict               5/5     5/5        100%  BINDING
+  O2_enumeration           5/5     5/5        100%  BINDING
+  O3_suppression           4/5     4/5        100%  BINDING
+  O4_format                3/5     3/5        100%  BINDING
+  O5_asof_calibration      5/5     5/5        100%  BINDING
+  O6_claim_vs_data         5/5     5/5        100%  BINDING
+  O7_no_softening          0/5     0/5         -    UNGRADED
+  O8_truncation_gradient   5/5     5/5        100%  BINDING
+  P1_gate_order            5/5     5/5        100%  BINDING
+  P2_scripts_invoked       5/5     5/5        100%  BINDING
+  P3_references_cited      5/5     5/5        100%  BINDING
+  P4_no_improvisation      5/5     5/5        100%  BINDING
+
+c12_truncation_gradient   (n=5 runs)
+  criterion                pass/n  graded    rate   reading
+  ------------------------------------------------------------------------------------------
+  O1_verdict               5/5     5/5        100%  BINDING
+  O2_enumeration           5/5     5/5        100%  BINDING
+  O3_suppression           5/5     5/5        100%  BINDING
+  O4_format                5/5     5/5        100%  BINDING
+  O5_asof_calibration      5/5     5/5        100%  BINDING
+  O6_claim_vs_data         5/5     5/5        100%  BINDING
+  O7_no_softening          0/5     0/5         -    UNGRADED
+  O8_truncation_gradient   4/5     4/5        100%  BINDING
+  P1_gate_order            5/5     5/5        100%  BINDING
+  P2_scripts_invoked       5/5     5/5        100%  BINDING
+  P3_references_cited      5/5     5/5        100%  BINDING
+  P4_no_improvisation      5/5     5/5        100%  BINDING
+
+No criterion fell below the DRIFT band. Every graded rule held in
+at least 80% of runs.
+
+Reliability note: the arena draws ONE sample, so the per-trial rate above
+is the arena-relevant number. A criterion at 80% has a 0.8 chance of
+holding on the single graded question; across 5 independent criteria at
+80% each, the chance all hold is 0.8^5 = 33%.
+============================================================================================
+
+PENDING (written to the run dir, NOT scored):
+  25 cell(s) need the LLM judge, 2 need a human.
+  See PROCEDURE_HUMAN.md for the exact commands.
+

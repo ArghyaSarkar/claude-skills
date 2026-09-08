@@ -1,0 +1,7 @@
+user_id,arm,exposure_date_ist,completed_orders_28d,cancel_rate
+t000001,treatment,2026-07-27,2.1,0.05
+t000002,treatment,2026-07-27,2.3,0.05
+t000003,treatment,2026-07-27,2.2,0.05
+c000001,control,2026-07-27,2.0,0.05
+c000002,control,2026-07-27,NOT_A_NUMBER,0.05
+c000003,control,2026-07-27,1.9,0.05

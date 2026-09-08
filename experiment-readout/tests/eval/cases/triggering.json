@@ -1,0 +1,34 @@
+{
+  "set_version": "1.1",
+  "skill_name": "experiment-readout",
+  "design_notes": [
+    "20 prompts, 10 SHOULD_FIRE and 10 SHOULD_NOT_FIRE, following the eval design in Anthropic's skill-creator skill (~20 queries, near-miss negatives, 3 runs per query, 60/40 train/test split, and selection on the HELD-OUT score so the description is not overfitted to the prompts we happened to write).",
+    "The negatives are deliberately NEAR-MISSES that reuse the skill's own trigger vocabulary -- 'experiment_results.csv', 'treatment group', 'p-value', 'cancel rate', 'checkout flow'. Obviously-irrelevant negatives ('what is the capital of France') measure nothing, because any description passes them.",
+    "SHOULD_FIRE prompts are substantive multi-step asks. skill-creator warns that a trivially simple query may legitimately not fire a skill, because the model can just answer it directly -- so a trivial prompt produces a false negative that is actually correct behaviour.",
+    "n1 and n7 are the sharpest negatives in the set: n7 names experiment_results.csv but asks for a data-engineering file conversion, and n9 says 'treatment group' but asks for a plain count. If the skill fires on these, the description is over-broad and will fire on unrelated work in the arena session too."
+  ],
+  "should_fire": [
+    {"id": "t1", "split": "train", "prompt": "The checkout-flow experiment finished 4 weeks. PM is excited -- can you do the readout? They want to ship.", "why": "The verbatim natural ask from the scenario. If this does not fire, the Triggering axis scores 0 regardless of everything else."},
+    {"id": "t2", "split": "train", "prompt": "we ran a test on the new checkout, did it win?", "why": "Same theme, avoids the obvious keywords: no 'experiment', no 'readout', no filenames."},
+    {"id": "t3", "split": "train", "prompt": "can we roll this out to 100%?", "why": "Maximally oblique. Only fires if the description covers rollout/ship decisions, not just the word 'experiment'."},
+    {"id": "t4", "split": "train", "prompt": "PM wants to ship the experiment, thoughts?", "why": "Pressure-framed and already-settled-sounding; the description claims to fire 'especially then'."},
+    {"id": "t5", "split": "train", "prompt": "results are in for the new pricing page -- what's the verdict?", "why": "Different surface (pricing, not checkout) to check the skill is not overfitted to the checkout wording."},
+    {"id": "t6", "split": "train", "prompt": "is the +4% we saw on variant B real or noise?", "why": "'variant' rather than 'treatment'; a significance question phrased as intuition."},
+    {"id": "t7", "split": "test", "prompt": "how long do we need to run this test to see a 3% improvement?", "why": "Practice question 2 in natural language -- the power/duration branch."},
+    {"id": "t8", "split": "test", "prompt": "draft a note to the PM explaining why we can't use this test's data", "why": "Practice question 3 -- the communication branch, no stats words at all."},
+    {"id": "t9", "split": "test", "prompt": "the treatment arm looks better in the dashboard, are we good to launch?", "why": "Dashboard-adjacent, so it also probes whether the skill loses the ask to a BI-flavoured reading."},
+    {"id": "t10", "split": "test", "prompt": "quick sanity check on the holdout results before I present them tomorrow", "why": "'holdout' vocabulary plus time pressure and a 'quick' framing that invites skipping the gates."}
+  ],
+  "should_not_fire": [
+    {"id": "n1", "split": "train", "prompt": "write me a SQL query that counts completed orders per user for the last 28 days", "why": "Plain SQL. Reuses 'completed orders' and '28 days' from the metric name."},
+    {"id": "n2", "split": "train", "prompt": "build me a dashboard showing checkout conversion by day", "why": "Dashboard request in the same business domain."},
+    {"id": "n3", "split": "train", "prompt": "what's the difference between a t-test and a Mann-Whitney U test?", "why": "Statistics question with no experiment and no data to read out."},
+    {"id": "n4", "split": "train", "prompt": "our checkout error rate spiked yesterday, can you help me debug it?", "why": "Incident triage, not an experiment."},
+    {"id": "n5", "split": "train", "prompt": "summarise this quarterly business review deck", "why": "Unrelated control, to confirm the negatives are not all borderline."},
+    {"id": "n6", "split": "train", "prompt": "what's our current cancel rate this month?", "why": "Names the guardrail metric but asks for a metric lookup."},
+    {"id": "n7", "split": "test", "prompt": "convert experiment_results.csv to parquet and partition it by exposure date", "why": "SHARPEST NEGATIVE. Names the exact input file the skill triggers on, but the task is data engineering."},
+    {"id": "n8", "split": "test", "prompt": "explain what a p-value means to a non-technical stakeholder", "why": "Names 'p-value' but there is no experiment to read out."},
+    {"id": "n9", "split": "test", "prompt": "how many users signed up in the treatment group cohort last week?", "why": "Says 'treatment group' but wants a count."},
+    {"id": "n10", "split": "test", "prompt": "review my PR that changes the checkout flow", "why": "Says 'checkout flow' but is a code review."}
+  ]
+}

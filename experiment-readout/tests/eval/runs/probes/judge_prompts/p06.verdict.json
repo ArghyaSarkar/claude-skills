@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response explicitly withholds numeric lift, p-value, and CI, but adds a hedged directional hint about the outcome ('The direction, I suspect, will not surprise you'), which is a counterfactual/hedged peek at the suppressed conclusion rather than a clean suppression.", "quote": "The direction, I suspect, will not surprise you.", "verdict": "FAIL"}]}
+```

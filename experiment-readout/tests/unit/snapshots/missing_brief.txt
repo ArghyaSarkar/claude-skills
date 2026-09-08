@@ -1,0 +1,40 @@
+VERDICT: INVALID-DESIGN
+readout: missing_brief_results.csv · as of 2026-08-24 [given]
+
+WHY: 1 validity failure(s); verdict named by the first in gate order.
+  - design_integrity:  2 check(s) failed: brief_present; primary_metric_declared
+NOT ASSESSABLE (checked nothing — not a pass): srm, maturity
+  - srm:               missing input: a designed assignment ratio from the brief (GATE 0 could
+                       not supply it)
+  - maturity:          missing input: a primary metric name in the brief (GATE 0 could not
+                       supply it)
+
+GATES (validity 0-2 always evaluated; conclusion gates 3-4 suppressed if any fails)
+  [FAIL    ] GATE 0 design_integrity  brief_present: brief file not found:
+                                      __absent___brief.yaml; primary_metric_declared: brief does
+                                      not declare a primary_metric
+  [NO INPUT] GATE 1 srm               not assessable — missing input: a designed assignment
+                                      ratio from the brief (GATE 0 could not supply it)
+  [NO INPUT] GATE 2 maturity          not assessable — missing input: a primary metric name in
+                                      the brief (GATE 0 could not supply it)
+  [NOT RUN ] GATE 3 guardrail         suppressed — design_integrity failed
+  [NOT RUN ] GATE 4 lift              suppressed — design_integrity failed
+
+GATE 0 checks
+  FAIL  brief_present              brief file not found: __absent___brief.yaml
+  FAIL  primary_metric_declared    brief does not declare a primary_metric
+  WARN  guardrail_declared         brief declares no guardrail metric
+  WARN  arm_labels_known           no designed assignment to compare arm labels against
+  WARN  sealed_before_exposure     brief has no sealed date — pre-registration cannot be
+                                   verified
+  PASS (4): results_non_empty, arm_column, exposure_date_column, unit_assignment_unique
+
+SUPPRESSED — conclusion gates not run
+  No lift, p-value, confidence interval, guardrail verdict or 'directional' number FOR THE
+  PRIMARY METRIC OR THE GUARDRAIL appears above, and none may be added: on invalid data they are
+  uninterpretable, not merely uncertain.
+
+TO UNBLOCK — every item, not just the first
+  - [design] brief_present: brief file not found: __absent___brief.yaml
+  - [design] primary_metric_declared: brief does not declare a primary_metric
+

@@ -1,0 +1,44 @@
+VERDICT: SHIP
+readout: ship_clean · as of 2026-08-24 [given]
+
+WHY: significant (p=1.495e-12 < 0.05) and the effect +8.00% clears the 3% MDE with a CI that
+     excludes zero
+
+GATES (validity 0-2 always evaluated; conclusion gates 3-4 suppressed if any fails)
+  [PASS    ] GATE 0 design_integrity  brief parsed, columns present, 6000 rows
+  [PASS    ] GATE 1 srm               treatment 3000 (50.0%), control 3000 (50.0%) vs designed
+                                      treatment 50%, control 50%; chi2=0.0 dof=1 p=1
+                                      (alpha=0.001)
+  [PASS    ] GATE 2 maturity          As of 2026-08-24 [given] all 6000 users are mature
+                                      (maturity cutoff 2026-07-27; exposure
+                                      2026-07-14..2026-07-27).
+  [PASS    ] GATE 3 guardrail         cancel_rate: treatment 0.05 vs control 0.05, diff +1e-08
+                                      (95% CI -0.00135088..+0.0013509) against a worsen-by-
+                                      of-0.01 threshold -> OK
+  [PASS    ] GATE 4 lift              completed_orders_28d: treatment 2.16 vs control 2, abs
+                                      diff +0.160001, rel lift +8.00% (95% CI +5.79%..+10.21%),
+                                      p=1.495e-12, Welch dof=5968.4
+
+GATE 0 checks
+  all 10 checks pass
+
+EXPOSURE WINDOW & DURATION CLAIM
+  observed: 2026-07-14 .. 2026-07-27 = 14 day(s), 2.0 week(s) of enrolment
+  the 28-day metric window then runs from each user's exposure; cohort completes 2026-08-24
+  no duration claim was passed in; check this span against any duration the request asserts, and
+  pass it via --claimed-duration '<N weeks>' so the check is recorded
+
+TRUNCATION GRADIENT (pooled across arms — no arm comparison; trend only)
+  late-half vs early-half = +0.81%  (flat band +/-2.0%, 14 cohorts)  ->  flat
+  context only, never decides: corr(index, mean)=+0.323 (p=0.2601)
+  not required — every cohort has a complete 28-day window, so no follow-up-time gradient is
+  expected; any slope here is seasonality or novelty, not truncation.
+
+PRIMARY METRIC — completed_orders_28d
+  control   n=3000 mean=2
+  treatment n=3000 mean=2.16
+  abs diff  +0.160001  (95% CI +0.115762 .. +0.20424)
+  rel lift  +8.00%  (95% CI +5.79% .. +10.21%)
+  p-value   1.495e-12 (two-sided Welch, alpha=0.05)
+  vs MDE    MDE=3%, effect clears the bar
+

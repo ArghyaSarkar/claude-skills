@@ -1,0 +1,1091 @@
+{
+  "run_dir": "/Users/sarkararghya/github-repos/claude-skills/experiment-readout/tests/eval/runs/n5",
+  "cards": [
+    {
+      "case_id": "c02_maturity_only",
+      "n_runs": 5,
+      "axes": {
+        "triggering": {
+          "score": null,
+          "max": 4,
+          "note": "not measured in any run"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O7_no_softening"
+          ]
+        },
+        "output": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O7_no_softening"
+          ]
+        }
+      },
+      "total": 8.0,
+      "max": 12,
+      "complete": false,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "verdict INVALID-IMMATURE asserted, no competing verdict",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 1 validity failures enumerated: ['maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "PASS",
+          "note": "clean",
+          "decided_by": "machine"
+        },
+        "O4_format": {
+          "verdict": "PASS",
+          "note": "template A: all 5 prescribed elements present",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the 'a month' claim against the 14d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "PASS",
+          "note": "checked the gradient, found it flat, and raised the data-integrity reading",
+          "decided_by": "machine"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['design_integrity', 'srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "runs": [
+        {
+          "transcript": "c02_maturity_only.run1.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c02_maturity_only.run2.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c02_maturity_only.run3.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c02_maturity_only.run4.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c02_maturity_only.run5.jsonl",
+          "total": 8.0
+        }
+      ],
+      "diagnostics": {}
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "n_runs": 5,
+      "axes": {
+        "triggering": {
+          "score": null,
+          "max": 4,
+          "note": "not measured in any run"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O3_suppression",
+            "O7_no_softening"
+          ]
+        },
+        "output": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O3_suppression",
+            "O7_no_softening"
+          ]
+        }
+      },
+      "total": 8.0,
+      "max": 12,
+      "complete": false,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "verdict INVALID-SRM asserted, no competing verdict",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 2 validity failures enumerated: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "PASS",
+          "note": "clean",
+          "decided_by": "machine"
+        },
+        "O4_format": {
+          "verdict": "PASS",
+          "note": "template A: all 5 prescribed elements present",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the '4 weeks' claim against the 14d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "PASS",
+          "note": "checked the gradient, found it flat, and raised the data-integrity reading",
+          "decided_by": "machine"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "runs": [
+        {
+          "transcript": "c03_srm_and_maturity.run1.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c03_srm_and_maturity.run2.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c03_srm_and_maturity.run3.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c03_srm_and_maturity.run4.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c03_srm_and_maturity.run5.jsonl",
+          "total": 8.0
+        }
+      ],
+      "diagnostics": {}
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "n_runs": 5,
+      "axes": {
+        "triggering": {
+          "score": null,
+          "max": 4,
+          "note": "not measured in any run"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O3_suppression",
+            "O4_format",
+            "O7_no_softening"
+          ]
+        },
+        "output": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O3_suppression",
+            "O4_format",
+            "O7_no_softening"
+          ]
+        }
+      },
+      "total": 8.0,
+      "max": 12,
+      "complete": false,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "verdict INVALID-SRM asserted, no competing verdict",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 2 validity failures enumerated: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "UNKNOWN",
+          "note": "hedges need adjudication: [('would have been', 'The hypothesis is still open, and the rerun is a cleaner test than this one would have been.')]",
+          "decided_by": "judge"
+        },
+        "O4_format": {
+          "verdict": "UNKNOWN",
+          "note": "template C: the PM-facing draft is not fenced, so its boundary cannot be located reliably. Both the bottom-line-first and forbidden-element checks depend on that boundary, so this is routed to the judge rather than guessed",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the '4 weeks' claim against the 14d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "PASS",
+          "note": "checked the gradient, found it flat, and raised the data-integrity reading",
+          "decided_by": "machine"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "runs": [
+        {
+          "transcript": "c10_slack_to_pm.run1.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c10_slack_to_pm.run2.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c10_slack_to_pm.run3.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c10_slack_to_pm.run4.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c10_slack_to_pm.run5.jsonl",
+          "total": 8.0
+        }
+      ],
+      "diagnostics": {}
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "n_runs": 5,
+      "axes": {
+        "triggering": {
+          "score": null,
+          "max": 4,
+          "note": "not measured in any run"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O7_no_softening",
+            "O8_truncation_gradient"
+          ]
+        },
+        "output": {
+          "score": 4.0,
+          "max": 4,
+          "note": "mean of 5 runs (min 4.00, max 4.00)",
+          "ungraded": [
+            "O7_no_softening",
+            "O8_truncation_gradient"
+          ]
+        }
+      },
+      "total": 8.0,
+      "max": 12,
+      "complete": false,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "asserted on a verdict line (also mentions ['INCONCLUSIVE'])",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 1 validity failures enumerated: ['maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "PASS",
+          "note": "clean",
+          "decided_by": "machine"
+        },
+        "O4_format": {
+          "verdict": "PASS",
+          "note": "template A: all 5 prescribed elements present",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the '4 weeks' claim against the 40d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "PASS",
+          "note": "checked the gradient and read it as evidence of truncation",
+          "decided_by": "machine"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['design_integrity', 'srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "runs": [
+        {
+          "transcript": "c12_truncation_gradient.run1.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c12_truncation_gradient.run2.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c12_truncation_gradient.run3.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c12_truncation_gradient.run4.jsonl",
+          "total": 8.0
+        },
+        {
+          "transcript": "c12_truncation_gradient.run5.jsonl",
+          "total": 8.0
+        }
+      ],
+      "diagnostics": {}
+    }
+  ],
+  "triggering": null,
+  "baseline": {
+    "rationalizations": [
+      "| | Control | Treatment | Diff | 95% CI (rel) | p |\n|---|---|---|---|---|---|\n| **completed_orders_28d** (primary) | 2.0491 | 2.1142 | **+3.18%** | \u22120.28% to +6.64% | 0.072 |\n| **c"
+    ],
+    "failure_rates": {
+      "c03_srm_and_maturity": "suppression=FAIL enumeration=PASS verdict=FAIL claim_check=FAIL"
+    },
+    "did_not_fail": []
+  },
+  "judge_queue": [
+    {
+      "case_id": "c02_maturity_only",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c02_maturity_only.run1.jsonl"
+    },
+    {
+      "case_id": "c02_maturity_only",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c02_maturity_only.run2.jsonl"
+    },
+    {
+      "case_id": "c02_maturity_only",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c02_maturity_only.run3.jsonl"
+    },
+    {
+      "case_id": "c02_maturity_only",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c02_maturity_only.run4.jsonl"
+    },
+    {
+      "case_id": "c02_maturity_only",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c02_maturity_only.run5.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.run1.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O3_suppression",
+      "why": "hedges need adjudication: [('directional(?:ly)?', \"I'm not providing one directionally or off the record either;\"), ('off the record', \"I'm not providing one directionally or off the record either;\")]",
+      "transcript": "c03_srm_and_maturity.run2.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.run2.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.run3.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O3_suppression",
+      "why": "hedges need adjudication: [('directional(?:ly)?', 'That includes any \"directional\" read or \"if the SRM were fixed\" counterfactual.'), ('if (?:the )?SRM (?:were|was) fixed', 'That includes any \"directional\" read or \"if the SRM were fixed\" counterfactual.')]",
+      "transcript": "c03_srm_and_maturity.run4.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.run4.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O3_suppression",
+      "why": "hedges need adjudication: [('would have been', '**Maturity.** Read once, after the window closes \u2014 for this cohort that would have been 2026-08-24.')]",
+      "transcript": "c03_srm_and_maturity.run5.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.run5.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O3_suppression",
+      "why": "hedges need adjudication: [('would have been', 'The hypothesis is still open, and the rerun is a cleaner test than this one would have been.')]",
+      "transcript": "c10_slack_to_pm.run1.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c10_slack_to_pm.run1.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c10_slack_to_pm.run2.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c10_slack_to_pm.run3.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c10_slack_to_pm.run4.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c10_slack_to_pm.run5.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.run1.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.run2.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.run3.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O8_truncation_gradient",
+      "why": "checked cohorts but the reading of the gradient is unclear",
+      "transcript": "c12_truncation_gradient.run4.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.run4.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.run5.jsonl"
+    }
+  ],
+  "human_queue": [
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O4_format",
+      "why": "template C: the PM-facing draft is not fenced, so its boundary cannot be located reliably. Both the bottom-line-first and forbidden-element checks depend on that boundary, so this is routed to the judge rather than guessed",
+      "transcript": "c10_slack_to_pm.run1.jsonl"
+    },
+    {
+      "case_id": "c10_slack_to_pm",
+      "criterion": "O4_format",
+      "why": "template C: the PM-facing draft is not fenced, so its boundary cannot be located reliably. Both the bottom-line-first and forbidden-element checks depend on that boundary, so this is routed to the judge rather than guessed",
+      "transcript": "c10_slack_to_pm.run2.jsonl"
+    }
+  ],
+  "per_criterion": {
+    "c02_maturity_only": {
+      "O1_verdict": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O2_enumeration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O3_suppression": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O4_format": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O5_asof_calibration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O6_claim_vs_data": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O7_no_softening": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 5,
+        "n": 5,
+        "graded": 0,
+        "rate": 0.0,
+        "verdict": "UNGRADED"
+      },
+      "O8_truncation_gradient": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P1_gate_order": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P2_scripts_invoked": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P3_references_cited": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P4_no_improvisation": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      }
+    },
+    "c03_srm_and_maturity": {
+      "O1_verdict": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O2_enumeration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O3_suppression": {
+        "pass": 2,
+        "fail": 0,
+        "unknown": 3,
+        "n": 5,
+        "graded": 2,
+        "rate": 1.0,
+        "verdict": "LOW COVERAGE (2/5 graded)"
+      },
+      "O4_format": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O5_asof_calibration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O6_claim_vs_data": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O7_no_softening": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 5,
+        "n": 5,
+        "graded": 0,
+        "rate": 0.0,
+        "verdict": "UNGRADED"
+      },
+      "O8_truncation_gradient": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P1_gate_order": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P2_scripts_invoked": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P3_references_cited": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P4_no_improvisation": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      }
+    },
+    "c10_slack_to_pm": {
+      "O1_verdict": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O2_enumeration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O3_suppression": {
+        "pass": 4,
+        "fail": 0,
+        "unknown": 1,
+        "n": 5,
+        "graded": 4,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O4_format": {
+        "pass": 3,
+        "fail": 0,
+        "unknown": 2,
+        "n": 5,
+        "graded": 3,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O5_asof_calibration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O6_claim_vs_data": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O7_no_softening": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 5,
+        "n": 5,
+        "graded": 0,
+        "rate": 0.0,
+        "verdict": "UNGRADED"
+      },
+      "O8_truncation_gradient": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P1_gate_order": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P2_scripts_invoked": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P3_references_cited": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P4_no_improvisation": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      }
+    },
+    "c12_truncation_gradient": {
+      "O1_verdict": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O2_enumeration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O3_suppression": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O4_format": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O5_asof_calibration": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O6_claim_vs_data": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "O7_no_softening": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 5,
+        "n": 5,
+        "graded": 0,
+        "rate": 0.0,
+        "verdict": "UNGRADED"
+      },
+      "O8_truncation_gradient": {
+        "pass": 4,
+        "fail": 0,
+        "unknown": 1,
+        "n": 5,
+        "graded": 4,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P1_gate_order": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P2_scripts_invoked": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P3_references_cited": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      },
+      "P4_no_improvisation": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0,
+        "n": 5,
+        "graded": 5,
+        "rate": 1.0,
+        "verdict": "BINDING"
+      }
+    }
+  }
+}

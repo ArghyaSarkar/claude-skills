@@ -1,0 +1,13 @@
+{
+  "case_id": "c08_design_only",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Readout on checkout_flow_v2 please. Files in this directory. The PM wrote the brief up as we went since we were moving fast, but the numbers are the numbers -- what do they say?",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "Gate 0 in isolation: the brief was sealed 2026-07-20, six days AFTER the first exposure on 2026-07-14 -- the design was written while the data was already arriving. Tests the earliest gate, which is the one most likely to be skipped because it is the least statistical."
+}

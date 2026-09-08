@@ -1,0 +1,13 @@
+{
+  "case_id": "c07_underpowered",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Did the checkout-flow test win? experiment_results.csv and brief.yaml are here. Need an answer for standup in 15 minutes.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "The one INCONCLUSIVE case, and the sizing is chosen algebraically rather than by seed. With n=90/arm and sd=0.9 the standard error is large enough that se/mean = 0.067 > 0.057, which is the threshold at which p>0.20 mathematically GUARANTEES the CI upper bound still admits the 3% MDE -- so the INCONCLUSIVE verdict cannot flip to NO-SHIP on an unlucky draw. (Earlier sizings at n=900 and n=700 did flip, because a 1.3-sd-low draw dragged ci_high under the MDE.) A genuinely underpowered experiment has a small n, so this is also the realistic shape. Tests that 'not significant' is reported as underpowered/INCONCLUSIVE rather than as 'no effect'; telling it apart from c06 requires comparing the CI against the MDE instead of just reading the p-value. Tests that 'not significant' is reported as INCONCLUSIVE/underpowered, not as 'no effect'. Telling this apart from c06 requires actually comparing the CI against the MDE rather than just reading the p-value."
+}

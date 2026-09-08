@@ -1,0 +1,274 @@
+{
+  "run_dir": "/Users/sarkararghya/.claude/skills/experiment-readout/tests/eval/runs/probe02",
+  "cards": [
+    {
+      "case_id": "c03_srm_and_maturity",
+      "axes": {
+        "triggering": {
+          "score": 4,
+          "max": 4,
+          "note": "fires unprompted reliably (100%)"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "4/4 observable signals passed",
+          "ungraded": []
+        },
+        "output": {
+          "score": 3.33,
+          "max": 4,
+          "note": "5/6 graded criteria passed",
+          "ungraded": [
+            "O3_suppression",
+            "O7_no_softening"
+          ]
+        }
+      },
+      "total": 11.33,
+      "max": 12,
+      "complete": true,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "verdict INVALID-SRM asserted, no competing verdict",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 2 validity failures enumerated: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "UNKNOWN",
+          "note": "hedges need adjudication: [('if (?:the )?SRM (?:were|was) fixed', 'There is no off-the-record version of it, including a counterfactual \"if the SRM were fixed\" figure: you cannot condition on a bug being absent while using data generated with it p')]",
+          "decided_by": "judge"
+        },
+        "O4_format": {
+          "verdict": "FAIL",
+          "note": "template A: missing ['verdict_on_first_line']",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the '4 weeks' claim against the 14d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "PASS",
+          "note": "checked the gradient, found it flat, and raised the data-integrity reading",
+          "decided_by": "machine"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "diagnostics": {},
+      "transcript": "c03_srm_and_maturity.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "axes": {
+        "triggering": {
+          "score": 4,
+          "max": 4,
+          "note": "fires unprompted reliably (100%)"
+        },
+        "process": {
+          "score": 4.0,
+          "max": 4,
+          "note": "4/4 observable signals passed",
+          "ungraded": []
+        },
+        "output": {
+          "score": 4.0,
+          "max": 4,
+          "note": "6/6 graded criteria passed",
+          "ungraded": [
+            "O7_no_softening",
+            "O8_truncation_gradient"
+          ]
+        }
+      },
+      "total": 12.0,
+      "max": 12,
+      "complete": true,
+      "cells": {
+        "O1_verdict": {
+          "verdict": "PASS",
+          "note": "verdict INVALID-IMMATURE asserted, no competing verdict",
+          "decided_by": "machine"
+        },
+        "O2_enumeration": {
+          "verdict": "PASS",
+          "note": "all 1 validity failures enumerated: ['maturity']",
+          "decided_by": "machine"
+        },
+        "O3_suppression": {
+          "verdict": "PASS",
+          "note": "clean",
+          "decided_by": "machine"
+        },
+        "O4_format": {
+          "verdict": "PASS",
+          "note": "template A: all 5 prescribed elements present",
+          "decided_by": "machine"
+        },
+        "O5_asof_calibration": {
+          "verdict": "PASS",
+          "note": "partial maturity, caveated, mechanism and resolver both named",
+          "decided_by": "machine"
+        },
+        "O6_claim_vs_data": {
+          "verdict": "PASS",
+          "note": "checked the '4 weeks' claim against the 40d span",
+          "decided_by": "machine"
+        },
+        "O8_truncation_gradient": {
+          "verdict": "UNKNOWN",
+          "note": "checked cohorts but the reading of the gradient is unclear",
+          "decided_by": "judge"
+        },
+        "O7_no_softening": {
+          "verdict": "UNKNOWN",
+          "note": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+          "decided_by": "judge"
+        },
+        "P1_gate_order": {
+          "verdict": "PASS",
+          "note": "gates checked appear in contract order: ['design_integrity', 'srm', 'maturity']",
+          "decided_by": "machine"
+        },
+        "P2_scripts_invoked": {
+          "verdict": "PASS",
+          "note": "run_readout.py executed",
+          "decided_by": "machine"
+        },
+        "P3_references_cited": {
+          "verdict": "PASS",
+          "note": "read ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] and cited ['gates.md', 'maturity-and-duration.md', 'output-templates.md'] by name",
+          "decided_by": "machine"
+        },
+        "P4_no_improvisation": {
+          "verdict": "PASS",
+          "note": "no ad-hoc computation of the suppressed conclusion",
+          "decided_by": "machine"
+        }
+      },
+      "diagnostics": {},
+      "transcript": "c12_truncation_gradient.jsonl"
+    }
+  ],
+  "triggering": {
+    "per_prompt": [
+      {
+        "id": "t3",
+        "expected": "fire",
+        "fired": true,
+        "confidence": "high",
+        "how": "DIRECT: Skill tool dispatched",
+        "prompt": "can we roll this out to 100%?"
+      },
+      {
+        "id": "t8",
+        "expected": "fire",
+        "fired": true,
+        "confidence": "high",
+        "how": "DIRECT: Skill tool dispatched",
+        "prompt": "draft a note to the PM explaining why we can't use this test's data"
+      },
+      {
+        "id": "n7",
+        "expected": "no_fire",
+        "fired": false,
+        "confidence": "high",
+        "how": "no dispatch, no file read, no mention",
+        "prompt": "convert experiment_results.csv to parquet and partition it by exposure date"
+      },
+      {
+        "id": "n9",
+        "expected": "no_fire",
+        "fired": true,
+        "confidence": "high",
+        "how": "DIRECT: Skill tool dispatched",
+        "prompt": "how many users signed up in the treatment group cohort last week?"
+      }
+    ],
+    "should_fire": {
+      "fired": 2,
+      "n": 2,
+      "rate": 1.0
+    },
+    "should_not_fire": {
+      "fired": 1,
+      "n": 2,
+      "rate": 0.5
+    },
+    "split_train": 1.0,
+    "split_test": 1.0
+  },
+  "baseline": {
+    "rationalizations": [
+      "| | Control | Treatment | Diff | 95% CI (rel) | p |\n|---|---|---|---|---|---|\n| **completed_orders_28d** (primary) | 2.0491 | 2.1142 | **+3.18%** | \u22120.28% to +6.64% | 0.072 |\n| **c"
+    ],
+    "failure_rates": {
+      "c03_srm_and_maturity": "suppression=FAIL enumeration=PASS verdict=FAIL claim_check=FAIL"
+    },
+    "did_not_fail": []
+  },
+  "judge_queue": [
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O3_suppression",
+      "why": "hedges need adjudication: [('if (?:the )?SRM (?:were|was) fixed', 'There is no off-the-record version of it, including a counterfactual \"if the SRM were fixed\" figure: you cannot condition on a bug being absent while using data generated with it p')]",
+      "transcript": "c03_srm_and_maturity.jsonl"
+    },
+    {
+      "case_id": "c03_srm_and_maturity",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c03_srm_and_maturity.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O8_truncation_gradient",
+      "why": "checked cohorts but the reading of the gradient is unclear",
+      "transcript": "c12_truncation_gradient.jsonl"
+    },
+    {
+      "case_id": "c12_truncation_gradient",
+      "criterion": "O7_no_softening",
+      "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+      "transcript": "c12_truncation_gradient.jsonl"
+    }
+  ],
+  "human_queue": [],
+  "per_criterion": {}
+}

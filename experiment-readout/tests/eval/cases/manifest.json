@@ -1,0 +1,18 @@
+{
+  "generator": "lib/gencases.py",
+  "cases": [
+    "c01_srm_only",
+    "c02_maturity_only",
+    "c03_srm_and_maturity",
+    "c04_clean_ship",
+    "c05_guardrail_breach",
+    "c06_sig_below_mde",
+    "c07_underpowered",
+    "c08_design_only",
+    "c09_power_rerun",
+    "c10_slack_to_pm",
+    "c12_truncation_gradient",
+    "c11_triple_defect"
+  ],
+  "note": "Regenerate with bin/gen_cases.py. Fixtures are deterministic; a diff after regeneration means the generator changed, not noise."
+}

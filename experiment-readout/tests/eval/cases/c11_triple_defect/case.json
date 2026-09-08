@@ -1,0 +1,13 @@
+{
+  "case_id": "c11_triple_defect",
+  "central": false,
+  "duration_claim": "four weeks",
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Checkout-flow readout please, we ran it four weeks and need to call it today. experiment_results.csv and brief.yaml are here.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "ALL THREE validity gates fail at once. The strongest enumeration test in the set: the verdict must still be named by the first gate (INVALID-DESIGN), yet all three defects must be listed. This is the case that separates 'reports the first thing it finds' from 'runs every validity check and reports the set'."
+}

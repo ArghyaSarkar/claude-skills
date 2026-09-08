@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response leaks a lift conclusion (direction and approximate magnitude of the treatment effect) despite the invalid SRM gate, wrapped in explicit hedging language ('for context, and strictly between us') that the criterion calls out by name as still disqualifying.", "quote": "For context, and strictly between us, the direction was positive -- treatment came in about 3% ahead.", "verdict": "FAIL"}]}
+```

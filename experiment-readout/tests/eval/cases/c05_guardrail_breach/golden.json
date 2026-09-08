@@ -1,0 +1,106 @@
+{
+  "all_validity_failures": [],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c05_guardrail_breach",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": null,
+    "graded": false
+  },
+  "conclusions_suppressed": false,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "full",
+    "failure_mechanism": "n/a -- every user is mature",
+    "mature_share": 1.0,
+    "n_mature": 5000,
+    "n_total": 5000
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-06-15": 2.0273,
+      "2026-06-16": 2.1214,
+      "2026-06-17": 2.0031,
+      "2026-06-18": 2.125,
+      "2026-06-19": 2.0488,
+      "2026-06-20": 2.0216,
+      "2026-06-21": 1.9907,
+      "2026-06-22": 2.0962,
+      "2026-06-23": 2.0923,
+      "2026-06-24": 1.9971,
+      "2026-06-25": 2.0535,
+      "2026-06-26": 2.21,
+      "2026-06-27": 2.0565,
+      "2026-06-28": 2.1537
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-06-15",
+    "guardrail": {
+      "breach": true,
+      "ci_high": 0.017318280852854105,
+      "diff": 0.014647161545939452
+    },
+    "last_exposure": "2026-06-28",
+    "lift": {
+      "abs_diff": 0.10913673684667957,
+      "mean_control": 2.0163570079116524,
+      "mean_treatment": 2.125493744758332,
+      "p_value": 8.023611481631666e-05,
+      "rel_ci_high": 0.08102546366750919,
+      "rel_ci_low": 0.02722593865703535,
+      "rel_diff": 0.05412570116227228
+    },
+    "mature_share": 1.0,
+    "power": {
+      "baseline_mean": 2.0163570079116524,
+      "baseline_sd": 0.9767514730782564,
+      "daily_users_per_arm": 178,
+      "exposure_days": 23,
+      "maturation_days": 28,
+      "n_per_arm": 4093,
+      "total_days": 51,
+      "total_weeks": 7.3
+    },
+    "srm": {
+      "chi2": 0.0,
+      "expected": {
+        "control": 2500.0,
+        "treatment": 2500.0
+      },
+      "observed": {
+        "control": 2500,
+        "treatment": 2500
+      },
+      "p_value": 1.0
+    }
+  },
+  "stopped_at": null,
+  "suppressed_gates": [],
+  "task": "readout",
+  "tests_method": "Differs from c04 in exactly one column: cancel_rate is +1.5pp. The primary metric is still a significant +5% win. Tests that the guardrail is read BEFORE the lift and that a winning primary cannot buy its way past a breach. Note this is the one case where a guardrail conclusion is REQUIRED -- validity passed, so suppression does not apply.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": 0.33322271262409325,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": false,
+    "late_vs_early_rel": 0.022402497822216108,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "PASS",
+    "maturity": "PASS",
+    "srm": "PASS"
+  },
+  "verdict": "NO-SHIP",
+  "verdict_reason": "guardrail breach"
+}

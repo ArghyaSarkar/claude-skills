@@ -1,0 +1,106 @@
+{
+  "all_validity_failures": [],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c06_sig_below_mde",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": null,
+    "graded": false
+  },
+  "conclusions_suppressed": false,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "full",
+    "failure_mechanism": "n/a -- every user is mature",
+    "mature_share": 1.0,
+    "n_mature": 7000,
+    "n_total": 7000
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-06-15": 1.9957,
+      "2026-06-16": 1.993,
+      "2026-06-17": 2.015,
+      "2026-06-18": 1.9984,
+      "2026-06-19": 1.9949,
+      "2026-06-20": 2.0204,
+      "2026-06-21": 2.0087,
+      "2026-06-22": 2.0025,
+      "2026-06-23": 2.0054,
+      "2026-06-24": 2.0214,
+      "2026-06-25": 2.0012,
+      "2026-06-26": 2.0072,
+      "2026-06-27": 2.0249,
+      "2026-06-28": 2.0369
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-06-15",
+    "guardrail": {
+      "breach": false,
+      "ci_high": 0.0028805805709538465,
+      "diff": 0.0006155966133289115
+    },
+    "last_exposure": "2026-06-28",
+    "lift": {
+      "abs_diff": 0.027199864742048385,
+      "mean_control": 1.9955624349956185,
+      "mean_treatment": 2.022762299737667,
+      "p_value": 0.0012968402978058699,
+      "rel_ci_high": 0.02193521838430135,
+      "rel_ci_low": 0.005325131144284668,
+      "rel_diff": 0.013630174764293007
+    },
+    "mature_share": 1.0,
+    "power": {
+      "baseline_mean": 1.9955624349956185,
+      "baseline_sd": 0.3536957686691617,
+      "daily_users_per_arm": 250,
+      "exposure_days": 3,
+      "maturation_days": 28,
+      "n_per_arm": 548,
+      "total_days": 31,
+      "total_weeks": 4.4
+    },
+    "srm": {
+      "chi2": 0.0,
+      "expected": {
+        "control": 3500.0,
+        "treatment": 3500.0
+      },
+      "observed": {
+        "control": 3500,
+        "treatment": 3500
+      },
+      "p_value": 1.0
+    }
+  },
+  "stopped_at": null,
+  "suppressed_gates": [],
+  "task": "readout",
+  "tests_method": "Statistically significant (+1.5%, p<0.01) but below the 3% MDE. Tests practical significance -- the most common real failure mode is reporting 'significant, therefore ship'.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": 0.6463258302041068,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": false,
+    "late_vs_early_rel": 0.005245038585054553,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "PASS",
+    "maturity": "PASS",
+    "srm": "PASS"
+  },
+  "verdict": "NO-SHIP",
+  "verdict_reason": "significant but below MDE"
+}

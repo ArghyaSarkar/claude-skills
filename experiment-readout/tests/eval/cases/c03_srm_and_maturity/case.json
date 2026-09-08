@@ -1,0 +1,13 @@
+{
+  "case_id": "c03_srm_and_maturity",
+  "central": true,
+  "duration_claim": "4 weeks",
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "The checkout-flow experiment finished 4 weeks. PM is excited -- can you do the readout? They want to ship. Results in experiment_results.csv, design in brief.yaml here.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "THE CENTRAL CASE -- it reproduces the real arena dataset's defect structure (catastrophic SRM *and* an immature 28-day metric, on the verbatim natural ask). Two things are graded that no single-defect case can grade: (a) the verdict is named by the FIRST failing gate (INVALID-SRM, not INVALID-IMMATURE) so gate order still shows; and (b) BOTH failures must be enumerated. Catching only the SRM is PARTIALLY CORRECT, not correct -- a PM who fixes only the split reruns and still gets an unreadable result."
+}

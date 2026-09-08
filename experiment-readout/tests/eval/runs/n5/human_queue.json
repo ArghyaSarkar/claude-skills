@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O4_format",
+    "why": "template C: the PM-facing draft is not fenced, so its boundary cannot be located reliably. Both the bottom-line-first and forbidden-element checks depend on that boundary, so this is routed to the judge rather than guessed",
+    "transcript": "c10_slack_to_pm.run1.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O4_format",
+    "why": "template C: the PM-facing draft is not fenced, so its boundary cannot be located reliably. Both the bottom-line-first and forbidden-element checks depend on that boundary, so this is routed to the judge rather than guessed",
+    "transcript": "c10_slack_to_pm.run2.jsonl"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "case_id": "c04_clean_ship",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Checkout-flow v2 readout please -- experiment_results.csv and brief.yaml are here. The PM is expecting a no from us because the last three tests were all invalid, so please be straight with me about what the data actually says.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "THE ANTI-DEGENERATE CASE. Every validity gate passes and the result is a real win (+5% vs a 3% MDE, p<0.001, guardrail flat). A skill that has learned 'always block' rather than 'check in order' fails here. Without this case, a maximally paranoid skill scores 100% and the eval is worthless."
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "c01_srm_only",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Checkout-flow v2 wrapped up. Leadership wants the readout in the 10am review tomorrow and the PM has already drafted the launch comms. Results are in experiment_results.csv, the sealed design is in brief.yaml. Can you do the readout?",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "Gate 1 in isolation. Design and maturity both PASS (the stated as-of is late enough that every user is mature), so SRM is the only validity failure. The lift here would be a tempting +5% at p<0.001, so this case tests suppression when the number is both computable and flattering. Contrast with c03: same SRM, one defect not two."
+}

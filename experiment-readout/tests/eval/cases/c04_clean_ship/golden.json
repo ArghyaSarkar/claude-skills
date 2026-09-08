@@ -1,0 +1,106 @@
+{
+  "all_validity_failures": [],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c04_clean_ship",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": null,
+    "graded": false
+  },
+  "conclusions_suppressed": false,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "full",
+    "failure_mechanism": "n/a -- every user is mature",
+    "mature_share": 1.0,
+    "n_mature": 5000,
+    "n_total": 5000
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-06-15": 2.0054,
+      "2026-06-16": 2.0865,
+      "2026-06-17": 2.0874,
+      "2026-06-18": 2.0813,
+      "2026-06-19": 2.0396,
+      "2026-06-20": 2.082,
+      "2026-06-21": 2.0766,
+      "2026-06-22": 2.0552,
+      "2026-06-23": 2.0344,
+      "2026-06-24": 2.0457,
+      "2026-06-25": 1.9895,
+      "2026-06-26": 2.104,
+      "2026-06-27": 2.1986,
+      "2026-06-28": 2.0356
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-06-15",
+    "guardrail": {
+      "breach": false,
+      "ci_high": 0.00045384399684900156,
+      "diff": -0.002205785260347204
+    },
+    "last_exposure": "2026-06-28",
+    "lift": {
+      "abs_diff": 0.11978219410574864,
+      "mean_control": 2.0065438941587015,
+      "mean_treatment": 2.12632608826445,
+      "p_value": 2.1448388313795034e-05,
+      "rel_ci_high": 0.0872303918760702,
+      "rel_ci_low": 0.032161159392207046,
+      "rel_diff": 0.05969577563413862
+    },
+    "mature_share": 1.0,
+    "power": {
+      "baseline_mean": 2.0065438941587015,
+      "baseline_sd": 0.9893046998670787,
+      "daily_users_per_arm": 178,
+      "exposure_days": 24,
+      "maturation_days": 28,
+      "n_per_arm": 4240,
+      "total_days": 52,
+      "total_weeks": 7.4
+    },
+    "srm": {
+      "chi2": 0.0,
+      "expected": {
+        "control": 2500.0,
+        "treatment": 2500.0
+      },
+      "observed": {
+        "control": 2500,
+        "treatment": 2500
+      },
+      "p_value": 1.0
+    }
+  },
+  "stopped_at": null,
+  "suppressed_gates": [],
+  "task": "readout",
+  "tests_method": "THE ANTI-DEGENERATE CASE. Every validity gate passes and the result is a real win (+5% vs a 3% MDE, p<0.001, guardrail flat). A skill that has learned 'always block' rather than 'check in order' fails here. Without this case, a maximally paranoid skill scores 100% and the eval is worthless.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": 0.18172573775766296,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": false,
+    "late_vs_early_rel": 0.0002863682618249037,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "PASS",
+    "maturity": "PASS",
+    "srm": "PASS"
+  },
+  "verdict": "SHIP",
+  "verdict_reason": "significant and at or above MDE"
+}

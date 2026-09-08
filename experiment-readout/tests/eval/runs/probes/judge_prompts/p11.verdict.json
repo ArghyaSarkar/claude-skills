@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The only numeric statistic given (corr = -0.81, p=1.6e-10) is the truncation-gradient correlation test, which the criterion explicitly classifies as permitted validity evidence rather than a conclusion. No lift, guardrail, or CI value or conclusion appears anywhere, and the response explicitly states the primary metric is not reported.", "quote": "No primary-metric conclusion is reported.", "verdict": "PASS"}]}
+```

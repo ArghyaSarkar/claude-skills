@@ -1,0 +1,59 @@
+VERDICT: INVALID-SRM
+readout: real_dataset_shape · as of 2026-08-21 [given]
+
+WHY: 2 validity failure(s); verdict named by the first in gate order.
+  - srm:               split 6492/5508 vs designed 50/50, chi2=80.69 dof=1 p=2.64e-19 — SAMPLE
+                       RATIO MISMATCH
+  - maturity:          78.6% of 12000 users have a complete 28-day window as of 2026-08-21
+                       (given) — partial maturity
+  Fixing only the first does not make this experiment readable.
+
+GATES (validity 0-2 always evaluated; conclusion gates 3-4 suppressed if any fails)
+  [PASS    ] GATE 0 design_integrity  brief parsed, columns present, 12000 rows
+  [FAIL    ] GATE 1 srm               treatment 6492 (54.1%), control 5508 (45.9%) vs designed
+                                      treatment 50%, control 50%; chi2=80.688 dof=1 p=2.64e-19
+                                      (alpha=0.001) — SAMPLE RATIO MISMATCH: the randomisation
+                                      is not trustworthy
+  [FAIL    ] GATE 2 maturity          As of 2026-08-21 [given] 9432 of 12000 users are mature;
+                                      2568 were exposed after the cutoff 2026-07-24. PARTIAL
+                                      maturity fails for its own reason: early and late cohorts
+                                      have different follow-up time, so a difference of means
+                                      mixes the treatment effect with an exposure-age effect.
+                                      Cohort completes on 2026-08-24.
+  [NOT RUN ] GATE 3 guardrail         suppressed — srm failed
+  [NOT RUN ] GATE 4 lift              suppressed — srm failed
+
+GATE 0 checks
+  all 10 checks pass
+
+EXPOSURE WINDOW & DURATION CLAIM
+  observed: 2026-07-14 .. 2026-07-27 = 14 day(s), 2.0 week(s) of enrolment
+  the 28-day metric window then runs from each user's exposure; cohort completes 2026-08-24
+  claimed:  4 weeks = 28 day(s) -> CONTRADICTED by the data
+  CLAIM-VS-DATA MISMATCH: the ask claims 4 weeks (~28 days) of runtime, but the data's exposure
+  span is 14 days (2026-07-14..2026-07-27). Check the claim against the data, do not inherit it.
+
+TRUNCATION GRADIENT (pooled across arms — no arm comparison; trend only)
+  late-half vs early-half = +0.59%  (flat band +/-2.0%, 14 cohorts)  ->  flat
+  context only, never decides: corr(index, mean)=+0.091 (p=0.7564)
+  DATA INTEGRITY CONCERN: the timeline makes a complete 28-day window impossible for the later
+  cohorts, yet the trend is flat — the values do not move with follow-up time the way a
+  truncated window forces them to. Treat the column as suspect (back-filled, recomputed, mis-
+  joined, or not the metric the brief names) and reconcile it with the pipeline owner before any
+  rerun. A stronger finding than immaturity alone.
+
+SUPPRESSED — conclusion gates not run
+  No lift, p-value, confidence interval, guardrail verdict or 'directional' number FOR THE
+  PRIMARY METRIC OR THE GUARDRAIL appears above, and none may be added: on invalid data they are
+  uninterpretable, not merely uncertain.
+  The one p-value above belongs to the cohort-trend diagnostic, which pools across arms and
+  carries no treatment comparison.
+
+TO UNBLOCK — every item, not just the first
+  - [srm] Find the assignment bug (logging, bot filtering, eligibility, mid-flight ramp), fix
+    it, re-run. Do not reweight, trim or 'repair' the split after the fact.
+  - [maturity] Wait for the cohort to complete (2026-08-24), or supply the real extraction date
+    with --asof if the metric was pulled later. Partial maturity is still a FAIL.
+  - [maturity/integrity] Reconcile the metric column with its pipeline owner first — a rerun of
+    a mis-built metric reproduces the same unusable column.
+

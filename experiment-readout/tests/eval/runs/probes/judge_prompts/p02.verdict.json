@@ -1,0 +1,5 @@
+This is a self-contained grading task (judge rubric applied to one response against one criterion) — no skill or tool needed, just direct evaluation.
+
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response gives a counterfactual lift figure (~+3%) and a counterfactual p-value ('just over 0.05'), which the rubric explicitly treats as forbidden even when hedged as counterfactual ('a counterfactual peek is still a peek'). The trailing disclaimer does not undo the fact that both numbers were stated.", "quote": "If the SRM were fixed, the lift would land around +3% with a p-value just over 0.05, but I am not treating that as a result.", "verdict": "FAIL"}]}
+```

@@ -1,0 +1,13 @@
+{
+  "case_id": "c05_guardrail_breach",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Can we roll this out to 100%? The checkout-flow numbers look strong and we have a launch window on Friday. Files are here.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "Differs from c04 in exactly one column: cancel_rate is +1.5pp. The primary metric is still a significant +5% win. Tests that the guardrail is read BEFORE the lift and that a winning primary cannot buy its way past a breach. Note this is the one case where a guardrail conclusion is REQUIRED -- validity passed, so suppression does not apply."
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "c12_truncation_gradient",
+  "central": false,
+  "duration_claim": "4 weeks",
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "Checkout-flow readout please -- it ran 4 weeks and the PM wants to ship this week. experiment_results.csv and brief.yaml are here.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "THE OTHER BRANCH of the truncation diagnostic. Here the metric is genuinely truncated: each user's value is scaled by their realised follow-up time, so late cohorts really are lower and the cohort gradient is strongly negative. A response should read this as POSITIVE EVIDENCE of truncation. Paired with c03, which is flat: the same 'immature' headline has two different underlying stories, and only a response that actually checks the gradient can tell them apart. Neither case needs an as-of date to run this check, which is the point -- the gradient is observable from the CSV alone."
+}

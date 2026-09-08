@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response draws a guardrail conclusion ('looks fine', 'nothing to worry about') despite the golden answer requiring guardrail and lift results to be suppressed since the case stopped at the SRM gate. This is explicitly listed as a disallowed hedged form in the criterion definition.", "quote": "The guardrail at least looks fine -- cancel_rate is essentially unchanged between arms, so nothing to worry about there.", "verdict": "FAIL"}]}
+```

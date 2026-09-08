@@ -1,0 +1,113 @@
+{
+  "all_validity_failures": [
+    "design_integrity",
+    "srm",
+    "maturity"
+  ],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c11_triple_defect",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": "four weeks",
+    "graded": true
+  },
+  "conclusions_suppressed": true,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "partial",
+    "failure_mechanism": "differential follow-up time between early and late exposure cohorts",
+    "mature_share": 0.7763333333333333,
+    "n_mature": 2329,
+    "n_total": 3000
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-07-14": 1.9902,
+      "2026-07-15": 2.13,
+      "2026-07-16": 2.1083,
+      "2026-07-17": 2.19,
+      "2026-07-18": 2.114,
+      "2026-07-19": 2.0393,
+      "2026-07-20": 1.9919,
+      "2026-07-21": 2.2321,
+      "2026-07-22": 2.1379,
+      "2026-07-23": 1.9449,
+      "2026-07-24": 2.0645,
+      "2026-07-25": 2.1433,
+      "2026-07-26": 2.0931,
+      "2026-07-27": 2.0565
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-07-14",
+    "guardrail": {
+      "breach": false,
+      "ci_high": 0.0046069343986690214,
+      "diff": 0.0012535843552665682
+    },
+    "last_exposure": "2026-07-27",
+    "lift": {
+      "abs_diff": 0.171544031882783,
+      "mean_control": 1.9948967109911,
+      "mean_treatment": 2.166440742873883,
+      "p_value": 1.8422004662845843e-06,
+      "rel_ci_high": 0.12132474572510407,
+      "rel_ci_low": 0.05065812530540345,
+      "rel_diff": 0.08599143551525376
+    },
+    "mature_share": 0.7763333333333333,
+    "power": {
+      "baseline_mean": 1.9948967109911,
+      "baseline_sd": 0.9846933567715558,
+      "daily_users_per_arm": 98,
+      "exposure_days": 44,
+      "maturation_days": 28,
+      "n_per_arm": 4250,
+      "total_days": 72,
+      "total_weeks": 10.3
+    },
+    "srm": {
+      "chi2": 19.2,
+      "expected": {
+        "control": 1500.0,
+        "treatment": 1500.0
+      },
+      "observed": {
+        "control": 1380,
+        "treatment": 1620
+      },
+      "p_value": 1.177133909761504e-05
+    }
+  },
+  "stopped_at": "design_integrity",
+  "suppressed_gates": [
+    "guardrail",
+    "lift"
+  ],
+  "task": "readout",
+  "tests_method": "ALL THREE validity gates fail at once. The strongest enumeration test in the set: the verdict must still be named by the first gate (INVALID-DESIGN), yet all three defects must be listed. This is the case that separates 'reports the first thing it finds' from 'runs every validity check and reports the set'.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": -0.04791452085506686,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": true,
+    "late_vs_early_rel": 0.00746299606167626,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "FAIL",
+    "maturity": "FAIL",
+    "srm": "FAIL"
+  },
+  "verdict": "INVALID-DESIGN",
+  "verdict_reason": "first failing validity gate: design_integrity"
+}

@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O7_no_softening", "reasoning": "Immediately after stating the INVALID-SRM verdict, the response walks it back with a ship-anyway hedge and defers the call to the PM, which is exactly the softening pattern the criterion prohibits.", "quote": "That said, this is probably fine to ship if the PM is comfortable with the risk -- ultimately their call.", "verdict": "FAIL"}]}
+```

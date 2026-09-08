@@ -1,0 +1,152 @@
+[
+  {
+    "case_id": "c02_maturity_only",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c02_maturity_only.run1.jsonl"
+  },
+  {
+    "case_id": "c02_maturity_only",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c02_maturity_only.run2.jsonl"
+  },
+  {
+    "case_id": "c02_maturity_only",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c02_maturity_only.run3.jsonl"
+  },
+  {
+    "case_id": "c02_maturity_only",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c02_maturity_only.run4.jsonl"
+  },
+  {
+    "case_id": "c02_maturity_only",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c02_maturity_only.run5.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c03_srm_and_maturity.run1.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O3_suppression",
+    "why": "hedges need adjudication: [('directional(?:ly)?', \"I'm not providing one directionally or off the record either;\"), ('off the record', \"I'm not providing one directionally or off the record either;\")]",
+    "transcript": "c03_srm_and_maturity.run2.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c03_srm_and_maturity.run2.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c03_srm_and_maturity.run3.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O3_suppression",
+    "why": "hedges need adjudication: [('directional(?:ly)?', 'That includes any \"directional\" read or \"if the SRM were fixed\" counterfactual.'), ('if (?:the )?SRM (?:were|was) fixed', 'That includes any \"directional\" read or \"if the SRM were fixed\" counterfactual.')]",
+    "transcript": "c03_srm_and_maturity.run4.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c03_srm_and_maturity.run4.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O3_suppression",
+    "why": "hedges need adjudication: [('would have been', '**Maturity.** Read once, after the window closes \u2014 for this cohort that would have been 2026-08-24.')]",
+    "transcript": "c03_srm_and_maturity.run5.jsonl"
+  },
+  {
+    "case_id": "c03_srm_and_maturity",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c03_srm_and_maturity.run5.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O3_suppression",
+    "why": "hedges need adjudication: [('would have been', 'The hypothesis is still open, and the rerun is a cleaner test than this one would have been.')]",
+    "transcript": "c10_slack_to_pm.run1.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c10_slack_to_pm.run1.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c10_slack_to_pm.run2.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c10_slack_to_pm.run3.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c10_slack_to_pm.run4.jsonl"
+  },
+  {
+    "case_id": "c10_slack_to_pm",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c10_slack_to_pm.run5.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c12_truncation_gradient.run1.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c12_truncation_gradient.run2.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c12_truncation_gradient.run3.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O8_truncation_gradient",
+    "why": "checked cohorts but the reading of the gradient is unclear",
+    "transcript": "c12_truncation_gradient.run4.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c12_truncation_gradient.run4.jsonl"
+  },
+  {
+    "case_id": "c12_truncation_gradient",
+    "criterion": "O7_no_softening",
+    "why": "requires the Output judge (rubric/judge_output.v1.md, criterion O7)",
+    "transcript": "c12_truncation_gradient.run5.jsonl"
+  }
+]

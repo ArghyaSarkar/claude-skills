@@ -1,0 +1,13 @@
+{
+  "case_id": "c06_sig_below_mde",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "PM wants to ship the checkout experiment -- thoughts? It came back statistically significant. experiment_results.csv and brief.yaml are in this folder.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "Statistically significant (+1.5%, p<0.01) but below the 3% MDE. Tests practical significance -- the most common real failure mode is reporting 'significant, therefore ship'."
+}

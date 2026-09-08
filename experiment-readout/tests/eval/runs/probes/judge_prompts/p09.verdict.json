@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The only statistics given are the observed arm split (54/46) and a p-value of 1.18e-05, which matches the golden's SRM chi-squared p-value exactly (1.177e-05) — both are permitted validity evidence, not conclusions. The response explicitly states no lift, CI, or guardrail conclusion follows, with no hedged or counterfactual peek at outcome numbers.", "quote": "No conclusion numbers follow.", "verdict": "PASS"}]}
+```

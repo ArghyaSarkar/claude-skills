@@ -1,0 +1,1 @@
+Draft the Slack message explaining to the PM why we cannot use this experiment's data as-is. Files here. Keep it kind -- they've been on this for a quarter and they're going to be gutted.

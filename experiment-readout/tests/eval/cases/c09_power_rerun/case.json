@@ -1,0 +1,13 @@
+{
+  "case_id": "c09_power_rerun",
+  "central": false,
+  "duration_claim": null,
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "If we rerun this checkout-flow experiment properly, what sample size and duration do we need to detect the 3% MDE from brief.yaml? Files here.",
+  "stated_asof": null,
+  "task": "power",
+  "tests_method": "Practice question 2, on the central case's data. The method signal is whether MATURATION is added to exposure (total = exposure_days + 28) -- the step everyone drops. An answer giving only exposure days is wrong even when n is right. Secondary signal: the baseline sd must come from the CONTROL arm, and a good answer notes that estimating a baseline from an SRM-corrupted sample is itself caveated."
+}

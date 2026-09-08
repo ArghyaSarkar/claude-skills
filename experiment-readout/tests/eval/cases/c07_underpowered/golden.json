@@ -1,0 +1,106 @@
+{
+  "all_validity_failures": [],
+  "asof": {
+    "effective": "2026-08-21",
+    "given": null,
+    "maturity_cutoff": "2026-07-24",
+    "metric_window_days": 28,
+    "must_flag_as_assumption": true,
+    "provenance": "defaulted_to_today",
+    "reference_today": "2026-08-21"
+  },
+  "case_id": "c07_underpowered",
+  "central": false,
+  "claim_vs_data": {
+    "actual_span_days": 14,
+    "claimed_duration": null,
+    "graded": false
+  },
+  "conclusions_suppressed": false,
+  "golden_version": "1.1",
+  "maturity": {
+    "branch": "full",
+    "failure_mechanism": "n/a -- every user is mature",
+    "mature_share": 1.0,
+    "n_mature": 180,
+    "n_total": 180
+  },
+  "reference": {
+    "cohort_means": {
+      "2026-06-15": 1.9862,
+      "2026-06-16": 1.8154,
+      "2026-06-17": 2.0135,
+      "2026-06-18": 1.744,
+      "2026-06-19": 1.9809,
+      "2026-06-20": 2.0491,
+      "2026-06-21": 1.9976,
+      "2026-06-22": 2.1674,
+      "2026-06-23": 1.5206,
+      "2026-06-24": 2.2209,
+      "2026-06-25": 1.9558,
+      "2026-06-26": 2.1406,
+      "2026-06-27": 2.3835,
+      "2026-06-28": 1.8438
+    },
+    "exposure_span_days": 14,
+    "first_exposure": "2026-06-15",
+    "guardrail": {
+      "breach": false,
+      "ci_high": 0.00905909486507345,
+      "diff": 0.00456729028302541
+    },
+    "last_exposure": "2026-06-28",
+    "lift": {
+      "abs_diff": 0.027563636596763308,
+      "mean_control": 1.9562537041307384,
+      "mean_treatment": 1.9838173407275017,
+      "p_value": 0.8394651654639324,
+      "rel_ci_high": 0.1504126280037313,
+      "rel_ci_low": -0.1222326056083118,
+      "rel_diff": 0.014090011197709765
+    },
+    "mature_share": 1.0,
+    "power": {
+      "baseline_mean": 1.9562537041307384,
+      "baseline_sd": 0.8908662315597828,
+      "daily_users_per_arm": 6,
+      "exposure_days": 603,
+      "maturation_days": 28,
+      "n_per_arm": 3618,
+      "total_days": 631,
+      "total_weeks": 90.1
+    },
+    "srm": {
+      "chi2": 0.0,
+      "expected": {
+        "control": 90.0,
+        "treatment": 90.0
+      },
+      "observed": {
+        "control": 90,
+        "treatment": 90
+      },
+      "p_value": 1.0
+    }
+  },
+  "stopped_at": null,
+  "suppressed_gates": [],
+  "task": "readout",
+  "tests_method": "The one INCONCLUSIVE case, and the sizing is chosen algebraically rather than by seed. With n=90/arm and sd=0.9 the standard error is large enough that se/mean = 0.067 > 0.057, which is the threshold at which p>0.20 mathematically GUARANTEES the CI upper bound still admits the 3% MDE -- so the INCONCLUSIVE verdict cannot flip to NO-SHIP on an unlucky draw. (Earlier sizings at n=900 and n=700 did flip, because a 1.3-sd-low draw dragged ci_high under the MDE.) A genuinely underpowered experiment has a small n, so this is also the realistic shape. Tests that 'not significant' is reported as underpowered/INCONCLUSIVE rather than as 'no effect'; telling it apart from c06 requires comparing the CI against the MDE instead of just reading the p-value. Tests that 'not significant' is reported as INCONCLUSIVE/underpowered, not as 'no effect'. Telling this apart from c06 requires actually comparing the CI against the MDE rather than just reading the p-value.",
+  "truncation_gradient": {
+    "branch": "gradient_absent",
+    "corr_cohort_index_vs_mean": 0.2912732056380913,
+    "expected_reading": "DATA INTEGRITY concern: the timeline says a 28-day metric cannot be mature, yet cohort means show no follow-up-time dependence at all -- the values are not what a truncated metric looks like",
+    "graded": false,
+    "late_vs_early_rel": 0.047530419361063427,
+    "n_cohorts": 14,
+    "note": "Checkable from the CSV alone -- no as-of date required. That is what makes it the strongest maturity diagnostic available."
+  },
+  "validity_gate_status": {
+    "design_integrity": "PASS",
+    "maturity": "PASS",
+    "srm": "PASS"
+  },
+  "verdict": "INCONCLUSIVE",
+  "verdict_reason": "underpowered; MDE not ruled out"
+}

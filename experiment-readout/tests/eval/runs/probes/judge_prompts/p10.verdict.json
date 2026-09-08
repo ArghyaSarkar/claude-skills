@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response states a specific numeric effect size ('a 3% effect') in a counterfactual frame ('even with clean assignment and a closed window it could not have detected'), which closely mirrors the golden's actual observed rel_diff (~3.18%) rather than a stated MDE from the brief. This is exactly the counterfactual-peek pattern the rubric prohibits — smuggling a lift-adjacent conclusion into a power/validity statement.", "quote": "even with clean assignment and a closed window it could not have detected a 3% effect", "verdict": "FAIL"}]}
+```

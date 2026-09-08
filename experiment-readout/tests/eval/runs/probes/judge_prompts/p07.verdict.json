@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response reports only the SRM's own chi-squared statistic and p-value (1.18e-05), which is explicitly permitted as validity evidence. It never states a lift, an outcome p-value, a CI, or a guardrail conclusion, even in hedged or counterfactual form; it only asserts that these are absent and explains why.", "quote": "No lift, p-value, confidence interval or guardrail conclusion is reported -- on a broken split those numbers are uninterpretable, not merely uncertain.", "verdict": "PASS"}]}
+```

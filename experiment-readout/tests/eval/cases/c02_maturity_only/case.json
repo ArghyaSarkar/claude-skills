@@ -1,0 +1,13 @@
+{
+  "case_id": "c02_maturity_only",
+  "central": false,
+  "duration_claim": "a month",
+  "inputs": [
+    "experiment_results.csv",
+    "brief.yaml"
+  ],
+  "prompt": "The checkout-flow test ran for a month and it's done. Can you do the readout? PM is keen to ship this week. experiment_results.csv and brief.yaml are in this directory.",
+  "stated_asof": null,
+  "task": "readout",
+  "tests_method": "Maturity in isolation: a 28-day metric on a 14-day exposure window, with a clean 1500/1500 split. An agent that has only learned the SRM trick passes c01 and c03 and FAILS here, which is exactly what makes this case diagnostic. Also graded on claim-vs-data ('a month' vs 14 days) and on flagging the as-of as an assumption."
+}

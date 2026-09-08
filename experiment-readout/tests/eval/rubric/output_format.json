@@ -1,0 +1,76 @@
+{
+  "format_contract_version": "1.2",
+  "derived_from": "SKILL.md steps 8-9 and references/output-templates.md Templates A/B/C. Kept as DATA so that when the prescribed shape changes this file is the single place to update.",
+  "why_task_specific": "v1.1 applied ONE marker set to every task and wrongly failed the Slack case: Template C explicitly forbids markdown tables and forbids naming reference files inside the message ('no process narration at all in a Slack message'). Requiring a gate table there penalised the skill for following its own template. Format conformance is per-template or it is nothing.",
+  "by_task": {
+    "readout": {
+      "template": "A",
+      "required_markers": [
+        {"name": "verdict_on_first_line", "kind": "first_line",
+         "patterns": ["INVALID-DESIGN", "INVALID-SRM", "INVALID-IMMATURE", "NO-SHIP", "SHIP", "INCONCLUSIVE"],
+         "why": "SKILL.md: 'Verdict is the first line.' Positional, so a verdict after a preamble fails."},
+        {"name": "all_three_gates_with_status", "kind": "all_of",
+         "patterns": ["design[ _-]?integrity", "\\bSRM\\b|sample ratio", "matur"],
+         "why": "All three validity gates appear with status, even when an earlier one already failed."},
+        {"name": "gate_status_tokens", "kind": "any_of",
+         "patterns": ["\\bPASS\\b", "\\bFAIL\\b", "\\bNOT_RUN\\b", "\\bNOT RUN\\b", "\\bWARN\\b"],
+         "why": "A gate table needs statuses, not prose. Loose on purpose: the check is that statuses exist, not that markdown was used."},
+        {"name": "references_cited_by_path", "kind": "any_of",
+         "patterns": ["references/gates\\.md", "references/output-templates\\.md", "references/maturity-and-duration\\.md"],
+         "why": "SKILL.md self-check: references cited by path. Required for Templates A and B, NOT for C."}
+      ],
+      "suppressed_only_markers": [
+        {"name": "suppression_stated_explicitly", "kind": "any_of",
+         "patterns": ["suppress", "not (?:computed|reported|shown|available)", "NOT_RUN", "NOT RUN", "withheld", "no lift", "will not (?:report|share|compute)"],
+         "why": "Silently omitting the lift is weaker than naming the suppression: a reader must be able to tell refusal from oversight."}
+      ]
+    },
+    "power": {
+      "template": "B",
+      "required_markers": [
+        {"name": "n_per_arm_stated", "kind": "any_of",
+         "patterns": ["n per arm", "per arm", "sample size per arm", "users per arm"],
+         "why": "Template B leads with n per arm."},
+        {"name": "enrolment_and_maturation_separated", "kind": "all_of",
+         "patterns": ["enrol|exposure|recruit", "matur|window|wait"],
+         "why": "THE method signal for this task: total = enrolment + the metric's own window. An answer giving only enrolment days is wrong even when n is right."},
+        {"name": "total_duration_stated", "kind": "any_of",
+         "patterns": ["total", "\\bweeks?\\b", "\\bdays?\\b"],
+         "why": "Template B ends in a TOTAL line."},
+        {"name": "references_cited_by_path", "kind": "any_of",
+         "patterns": ["references/maturity-and-duration\\.md", "references/output-templates\\.md", "references/gates\\.md"],
+         "why": "Template B has an explicit 'Process & references' block."}
+      ],
+      "suppressed_only_markers": [
+        {"name": "sizing_flagged_as_floor", "kind": "any_of",
+         "patterns": ["floor", "lower bound", "understate", "immature", "at least", "conservative"],
+         "why": "output-templates.md: 'If the current data failed maturity, say plainly that the sizing is a floor' -- the sd came from an immature column."}
+      ]
+    },
+    "slack": {
+      "template": "C",
+      "required_markers": [
+        {"name": "bottom_line_first_sentence", "kind": "first_line",
+         "patterns": ["can'?t use|cannot use|not usable|unusable|can'?t read|INVALID", "won'?t support|can'?t support|no ship|not ship"],
+         "why": "Template C: 'The first sentence is the bottom line -- the same rule as line 1 of a readout.' No warm-up, no header line above it."},
+        {"name": "mechanism_named_in_prose", "kind": "all_of",
+         "patterns": ["split|assignment|SRM|50/50", "28[- ]day|window|matur"],
+         "why": "Template C wants reasons as plain sentences with the MECHANISM first -- not a gate table, which it forbids."},
+        {"name": "next_step_given", "kind": "any_of",
+         "patterns": ["rerun|re-run|next step|what we do next|fix", "\\brestart\\b", "size|duration"],
+         "why": "Template C: 'What we do next: the fix, the rerun size and duration.'"}
+      ],
+      "suppressed_only_markers": [
+        {"name": "explains_why_no_number", "kind": "any_of",
+         "patterns": ["uninterpretable", "not just uncertain|rather than uncertain", "anchor", "won'?t send|not sending|no number|not going to (?:give|send|quote)", "no lift"],
+         "why": "Template C has a dedicated beat: 'Why I'm not sending a lift number.' Declining silently is weaker than saying why."}
+      ],
+      "forbidden_markers": [
+        {"name": "no_markdown_table", "patterns": ["\\|\\s*-{3,}\\s*\\|"],
+         "why": "Template C: 'no markdown tables'."},
+        {"name": "no_process_narration", "patterns": ["references/[a-z-]+\\.md"],
+         "why": "Template C: 'No process narration at all in a Slack message: nobody in the channel needs to know which reference file you read.' NOTE: only applied to the message body; an agent's wrapper commentary to the analyst is not part of the draft."}
+      ]
+    }
+  }
+}

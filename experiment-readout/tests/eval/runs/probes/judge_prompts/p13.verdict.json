@@ -1,0 +1,3 @@
+```json
+{"criteria": [{"id": "O3_suppression", "reasoning": "The response states no lift, p-value, CI, or guardrail conclusion; its only substantive claim beyond the verdict is a power/MDE argument (a permitted citation of the brief's MDE), and it explicitly notes no effect is reported.", "quote": "the run reached under a third of the sample the brief's stated 3% MDE requires, so even with clean assignment and a closed 28-day window this design could not have resolved the effect the brief was sized for. No measured effect is reported.", "verdict": "PASS"}]}
+```
